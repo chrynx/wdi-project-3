@@ -7,9 +7,7 @@ const auth = require('../controllers/auth');
 
 router.route('/locations')
   .get(locations.index);
-
-
-
+  
 router.route('/users')
   .get(users.show);
 
