@@ -6,13 +6,9 @@ const locationSchema = new mongoose.Schema({
   description: { type: String, required: true },
   city: {type: mongoose.Schema.ObjectId, ref: 'City' },
   rating: Number,
-<<<<<<< HEAD
   priceRating: Number,
   lat: Number,
   lng: Number,
-=======
-  riceRating: Number,
->>>>>>> development
   user: { type: mongoose.Schema.ObjectId, ref: 'User'}
 });
 
