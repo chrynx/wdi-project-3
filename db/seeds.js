@@ -17,6 +17,7 @@ User.collection.drop();
 City
   .create([{
     name: 'London',
+    country: 'United Kingdom',
     description: 'nice',
     image: 'https://cdn.thinglink.me/api/image/593376750830878722/1240/10/scaletowidth'
   }, {
@@ -66,7 +67,6 @@ City
     description: 'London is a great place in the middle of the world'
   }]).then((cities) => {
     console.log(`${cities.length} categories created`);
-
     Location
       .create([{
         name: 'General Assembly',
@@ -74,7 +74,7 @@ City
         description: 'campus',
         city: cities[0],
         rating: 5,
-        riceRating: 5
+        priceRating: 5
       }])
       .then(locations => console.log(`${locations.length} locations created!`))
       .catch(err => console.log(err))
