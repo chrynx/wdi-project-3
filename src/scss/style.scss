@@ -1,1 +1,105 @@
 // Import all of your scss files here
+html {
+  box-sizing: border-box;
+  body {
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0;
+    .landing {
+      background: url('https://cdn.suwalls.com/wallpapers/nature/otztal-alps-30165-2880x1800.jpg') no-repeat center center;
+      height:100vh;
+      width: 100%;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      position: relative;
+      h1 {
+        position: absolute;
+        top: 40%;
+        left: 60%;
+        font-size: 70px;
+      }
+      p {
+        position: absolute;
+        top: 50%;
+        left: 60.5%;
+        font-size: 20px;
+      }
+      .homeLogInButton {
+        position: absolute;
+        bottom: 50px;
+        right: 260px;
+        width: 200px;
+        padding: 20px 50px;
+        background: black;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: white;
+        font-size: 15px;
+      }
+      .homeSignUpButton {
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+        width: 200px;
+        padding: 20px 50px;
+        background: black;
+        border: 2px solid black;
+        border-radius: 5px;
+        color: white;
+        font-size: 15px;
+      }
+    }
+    .homeCity {
+      height: 50vh;
+      width: 100%;
+      display: flex;
+      .description {
+        background: url('http://topholidays.net/wp-content/uploads/2014/05/Luxury-Hotel-Bangkok-Thailand-04.jpg') no-repeat;
+        background-size: cover;
+        color: black;
+        // display: flex;
+        // flex-direction: column;
+        // align-content: flex-end;
+        // justify-content: center;
+        // text-align: center;
+        height: 100%;
+        width: 100%;
+        .homeCityName {
+          font-size: 200px;
+          text-transform: uppercase;
+          padding: 0;
+
+        }
+        hr {
+          width: 90%;
+        }
+        // .homeCityDescription {
+        //   font-size: 24px;
+        // }
+      }
+    }
+    footer {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 5vh;
+      background-color: black;
+      color: white;
+      .footerLeft {
+      }
+      .footerCenter {
+
+      }
+      .footerRight {
+
+      }
+    }
+  }
+}
