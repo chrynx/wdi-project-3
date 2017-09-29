@@ -7,8 +7,6 @@ const locationSchema = new mongoose.Schema({
   city: {type: mongoose.Schema.ObjectId, ref: 'City' },
   rating: Number,
   riceRating: Number,
-  lat: Number,
-  lng: Number,
   user: { type: mongoose.Schema.ObjectId, ref: 'User'}
 });
 
