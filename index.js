@@ -1,8 +1,8 @@
 const express     = require('express');
 const app         = express();
 const bodyParser = require('body-parser');
-mongoose.Promise = require('bluebird');
 const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 const morgan = require('morgan');
 const { dbURI, port } = require('./config/environment');
 const routes = require('./config/routes');

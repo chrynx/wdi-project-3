@@ -11,12 +11,15 @@ router.route('/locations')
 
 
 router.route('/users')
-  .get(users.index);
+  .get(users.show);
 
 
 
-router.route('/auth')
-  .get(auth.index);
+router.route('/register')
+  .get(auth.register);
 
+router.route('/login')
+  .get(auth.login);
 
+router.all('/*', (req, res) => res.notFound());
 module.exports = router;
