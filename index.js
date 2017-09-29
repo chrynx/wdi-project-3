@@ -1,9 +1,23 @@
 const express     = require('express');
 const app         = express();
-const { port }    = require('./config/environment');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+const morgan = require('morgan');
+const { dbURI, port } = require('./config/environment');
+const routes = require('./config/routes');
+
+
+mongoose.connect(dbURI);
+
+
+app.use(morgan('dev'));
 
 app.use(express.static(`${__dirname}/public`));
+app.use(bodyParser.json());
 
+
+app.use('/api', routes);
 app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
 app.listen(port, () => console.log(`Express has started on port: ${port}`));

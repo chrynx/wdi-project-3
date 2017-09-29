@@ -10,4 +10,14 @@ const citySchema = new mongoose.Schema({
   user: { type: mongoose.Schema.ObjectId, ref: 'User'}
 });
 
+
+
+citySchema
+  .virtual('locations', {
+    ref: 'Location',
+    localField: '_id',
+    foreignField: 'city'
+  });
+
+
 module.exports = mongoose.model('City', citySchema);
