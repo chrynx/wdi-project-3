@@ -9,10 +9,34 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('citiesIndex', {
       url: '/',
-      templateUrl: '/js/views/cities/homepage.html',
+      templateUrl: 'js/views/cities/homepage.html',
       controller: 'CitiesIndexCtrl as citiesIndex'
+    })
+    .state('locationsNew', {
+      url: '/locations/new',
+      templateUrl: 'js/views/cities/locationsNew.html',
+      controller: 'LocationsNewCtrl as locationsNew'
+    })
+    .state('locationsShow', {
+      url: '/locations/:id',
+      templateUrl: 'js/views/cities/locationsShow.html',
+      controller: 'LocationsShowCtrl as locationsShow'
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'js/views/auth/login.html',
+      controller: 'LoginCtrl as login'
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'js/views/auth/register.html',
+      controller: 'RegisterCtrl as register'
+    })
+    .state('usersShow', {
+      url: '/users/:id',
+      templateUrl: 'js/views/cities/profile.html',
+      controller: 'UsersShowCtrl as usersShow'
     });
 
-
-  $urlRouterProvider.otherwise('/cities');
+  $urlRouterProvider.otherwise('/');
 }

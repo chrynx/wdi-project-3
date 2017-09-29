@@ -2,28 +2,42 @@ angular
   .module('hiddenTravellr')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$transitions', '$rootScope', '$state', '$auth'];
-function MainCtrl($transitions, $rootScope, $state, $auth) {
+MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions'];
+function MainCtrl($rootScope, $state, $auth, $transitions) {
   const vm = this;
-
+  vm.navIsOpen = false;
   vm.isAuthenticated = $auth.isAuthenticated;
+  const protectedStates = ['locationsNew'];
+
+  $rootScope.$on('error', (e, err) => {
+    vm.message = err.data.message;
+
+    if(err.status === 401 && vm.pageName !== 'login') {
+      vm.stateHasChanged = false;
+      $state.go('login');
+    }
+  });
 
   $transitions.onSuccess({}, (transition) => {
-    vm.menuIsOpen = false;
-    vm.pageName = transition.$to().name;
+    vm.navIsOpen = false; // Making the burger menu closed by default on page load
+    vm.pageName = transition.$to().name; // Storing the current state name as a string
 
+    // if the user is not logged in and the protectedStates array includes the state name
+    if(!$auth.isAuthenticated() && protectedStates.includes(vm.pageName)) {
+      // set a message and send the user to the login page
+      vm.message = 'You must be logged in to view this page.';
+      return $state.go('login');
+    }
+
+    if($auth.getPayload()) vm.currentUserId = $auth.getPayload().userId;
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
   });
 
-  $rootScope.$on('error', (e, err) => {
-    console.log('in main controller', err);
-    vm.stateHasChanged = false;
-    vm.message = err.data.message;
+  function logout() {
+    $auth.logout();
+    $state.go('login');
+  }
 
-
-    if(err.status === 401 && vm.pageName !== 'login') {
-      $state.go('login');
-    }
-  });
+  vm.logout = logout;
 }

@@ -1,13 +1,18 @@
 const User = require('../models/user');
-//
-function usersShow(req, res) {
+
+function showRoute(req, res, next) {
   User
     .findById(req.params.id)
+    .populate('posts')
     .exec()
-    .then(user => res.render('users/show', { user }))
-    .catch(err => res.render('error', { err }));
+    .then((user) => {
+      if(!user) return res.notFound();
+
+      return res.json(user);
+    })
+    .catch(next);
 }
 
 module.exports = {
-  show: usersShow
+  show: showRoute
 };
