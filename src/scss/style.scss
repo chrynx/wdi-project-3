@@ -11,7 +11,7 @@ html {
       width: 200px;
       padding: 20px 50px;
       background: black;
-      border: 2px solid black;
+      border: 2px solid white;
       border-radius: 5px;
       color: white;
       font-size: 15px;
@@ -164,18 +164,24 @@ html {
       width: 100%;
       position: relative;
       h1 {
-        cursor:default;
+        animation: fadein 1s;
+        line-height: 1.1;
+        font-family: 'Erica One', curvise;
+        color: white;
         opacity: 0.8;
         text-transform: uppercase;
         position: absolute;
-        font-size: 200px;
+        font-size: 300px;
       }
       p {
-        cursor:default;
+        animation: fadein 1s;
+        line-height: 1.1;
+        font-family: 'Erica One', curvise;
+        color: white;
         opacity: 0.8;
         text-transform: uppercase;
         position: absolute;
-        font-size: 150px;
+        font-size: 250px;
         top: 20%;
       }
     }
