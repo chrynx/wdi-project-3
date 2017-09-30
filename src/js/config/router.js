@@ -8,9 +8,14 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
     .state('citiesIndex', {
-      url: '/',
+      url: '/cities',
       templateUrl: 'js/views/cities/homepage.html',
       controller: 'CitiesIndexCtrl as citiesIndex'
+    })
+    .state('citiesShow', {
+      url: '/cities/:id',
+      templateUrl: 'js/views/cities/citiesShow.html',
+      controller: 'CitiesShowCtrl as citiesShow'
     })
     .state('locationsNew', {
       url: '/locations/new',
@@ -22,6 +27,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/cities/locationsShow.html',
       controller: 'LocationsShowCtrl as locationsShow'
     })
+
     .state('login', {
       url: '/login',
       templateUrl: 'js/views/auth/login.html',
@@ -38,5 +44,5 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'UsersShowCtrl as usersShow'
     });
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/cities');
 }

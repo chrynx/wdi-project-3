@@ -5,10 +5,10 @@
   <button ui-sref="register" class="homeSignUpButton">Sign Up</button>
 </div>
 <div style="animation: fadein 5s;" ng-repeat="city in citiesIndex.all">
-<div class="homeCity">
+<div class="homeCity" ui-sref="citiesShow({ id: city.id })">
   <div style="background: url('{{city.image}}') no-repeat center center;
           background-size: cover;" class="description">
-    <div class="homeCityName">
+    <div  ui-sref="citiesShow({ id: city.id })" class="homeCityName">
       {{city.name}}<br>{{city.country}}
     </div>
     <!-- <hr> -->

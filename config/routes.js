@@ -6,10 +6,11 @@ const auth = require('../controllers/auth');
 const secureRoute = require('../lib/secureRoute');
 
 // --------------
-router.route('/home')
+router.route('/cities')
   .get(cities.index);
 // --------------------
-
+router.route('/cities/:id')
+  .get(cities.show);
 // ----------------
 router.route('/locations')
   .get(locations.index)

@@ -8,6 +8,7 @@ LocationsIndexCtrl.$inject = [ 'Location'];
 function LocationsIndexCtrl(Location) {
   const vm = this;
   vm.all = Location.query();
+  window.scrollTo(0,0);
 }
 
 LocationsNewCtrl.$inject = ['$state', 'Location'];
@@ -23,6 +24,7 @@ function LocationsNewCtrl($state, Location) {
         $state.go('locationsIndex');
       });
   }
+  window.scrollTo(0,0);
 }
 
 LocationsShowCtrl.$inject = ['$state', 'Location'];
@@ -38,4 +40,5 @@ function LocationsShowCtrl($state, Location) {
         $state.go('locationsIndex');
       });
   }
+  window.scrollTo(0,0);
 }

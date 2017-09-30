@@ -1,16 +1,19 @@
-<div class="cityShowLanding">
-  <h1>Bangkok</h1>
-  <p>Thailand</p>
+
+<div style="background: url('{{ citiesShow.city.image }}') no-repeat center center; background-size: cover;" class="cityShowLanding">
+  <h1>{{ citiesShow.city.name }}</h1>
+  <p>{{ citiesShow.city.country }}</p>
+  <button ui-sref="citiesIndex" class="homeSignUpButton">Home</button>
+
 </div>
 
 <div class="cityShowName">
-  Bangkok, Thailand
-  <div>5 stars</div>
+  {{ citiesShow.city.name }}, {{ citiesShow.city.country }}
+  <div>CITY RATING HERE</div>
   <button>Created by: [username here]</button>
 </div>
 
 <div class="cityShowDescription">
-  Here lies the description of Bangkok, Thailand
+  {{ citiesShow.city.description }}
 </div>
 
 <div class="cityShowTabs">
@@ -29,43 +32,43 @@
     Google maps goes here
   </div>
 </div>
-  <div class="cityShowLocationsIndex">
-    <h1>Locations</h1>
-    <hr>
+<div class="cityShowLocationsIndex">
+  <h1>Locations</h1>
+  <hr>
   <div class="cityShowLocation">
     <div class="cityShowLocationImage">
-    <img src="http://www.placecage.com/3000/3000">
-  </div>
-  <div class="cityShowLocationDescription">
-    <h1>Location Name</h1>
-    <p>Location description</p>
-  </div>
-  </div>
-  <div class="cityShowLocation">
-    <div class="cityShowLocationImage">
-    <img src="http://www.placecage.com/3000/3000">
-  </div>
-  <div class="cityShowLocationDescription">
-    <h1>Location Name</h1>
-    <p>Location description</p>
-  </div>
+      <img src="http://www.placecage.com/3000/3000">
+    </div>
+    <div class="cityShowLocationDescription">
+      <h1>Location Name</h1>
+      <p>Location description</p>
+    </div>
   </div>
   <div class="cityShowLocation">
     <div class="cityShowLocationImage">
-    <img src="http://www.placecage.com/3000/3000">
-  </div>
-  <div class="cityShowLocationDescription">
-    <h1>Location Name</h1>
-    <p>Location description</p>
-  </div>
+      <img src="http://www.placecage.com/3000/3000">
+    </div>
+    <div class="cityShowLocationDescription">
+      <h1>Location Name</h1>
+      <p>Location description</p>
+    </div>
   </div>
   <div class="cityShowLocation">
     <div class="cityShowLocationImage">
-    <img src="http://www.placecage.com/3000/3000">
+      <img src="http://www.placecage.com/3000/3000">
+    </div>
+    <div class="cityShowLocationDescription">
+      <h1>Location Name</h1>
+      <p>Location description</p>
+    </div>
   </div>
-  <div class="cityShowLocationDescription">
-    <h1>Location Name</h1>
-    <p>Location description</p>
-  </div>
+  <div class="cityShowLocation">
+    <div class="cityShowLocationImage">
+      <img src="http://www.placecage.com/3000/3000">
+    </div>
+    <div class="cityShowLocationDescription">
+      <h1>Location Name</h1>
+      <p>Location description</p>
+    </div>
   </div>
 </div>
