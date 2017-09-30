@@ -17,7 +17,7 @@ User.collection.drop();
 City
   .create([{
     name: 'London',
-    country: 'United Kingdom',
+    country: 'UK',
     description: 'nice',
     image: 'https://cdn.thinglink.me/api/image/593376750830878722/1240/10/scaletowidth'
   }, {
@@ -57,7 +57,7 @@ City
     description: 'London is a great place in the middle of the world'
   }, {
     name: 'NewYork',
-    country: 'United States',
+    country: 'USA',
     image: 'https://www.gentlegiant.com/wp-content/uploads/2015/06/New-York.jpg',
     description: 'London is a great place in the middle of the world'
   }, {

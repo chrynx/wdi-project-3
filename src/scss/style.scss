@@ -98,8 +98,6 @@ html {
       width: 100%;
       display: flex;
       .description {
-        background: url('http://topholidays.net/wp-content/uploads/2014/05/Luxury-Hotel-Bangkok-Thailand-04.jpg') no-repeat;
-        background-size: cover;
         color: black;
         // display: flex;
         // flex-direction: column;
@@ -109,10 +107,12 @@ html {
         height: 100%;
         width: 100%;
         .homeCityName {
+          line-height: 0.8;
+          font-family: 'Erica One', cursive;
           font-size: 200px;
           text-transform: uppercase;
           padding: 0;
-
+          color: white;
         }
         hr {
           width: 90%;
