@@ -23,6 +23,6 @@
     "satellizer": "^0.15.5"
   },
   "resolutions": {
-    "angular": ">= 1.2.0"
+    "angular": "1.6.6"
   }
 }
