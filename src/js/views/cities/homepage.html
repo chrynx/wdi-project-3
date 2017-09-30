@@ -4,7 +4,7 @@
   <button ui-sref="login" class="homeLogInButton">Log In</button>
   <button ui-sref="register" class="homeSignUpButton">Sign Up</button>
 </div>
-<div ng-repeat="city in citiesIndex.all">
+<div style="animation: fadein 5s;" ng-repeat="city in citiesIndex.all">
 <div class="homeCity">
   <div style="background: url('{{city.image}}') no-repeat center center;
           background-size: cover;" class="description">

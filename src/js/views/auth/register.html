@@ -1,7 +1,7 @@
-<div class="row">
-  <div class="col-md-4">
-    <h2>Register</h2>
-    <form name="register.registerForm" ng-submit="register.submit()" novalidate>
+<div class="landing">
+    <h1>Join our community</h1>
+    <p>Enter your details to enjoy the world</p>
+    <form  class="landingSignUpForm" name="register.registerForm" ng-submit="register.submit()" novalidate>
       <div>
         <label for="username">Username</label>
         <input type="text" name="username" id="username" ng-model="register.user.username" required>
@@ -34,5 +34,5 @@
 
       <button class="button">Register</button>
     </form>
-  </div>
+    <button ui-sref="citiesIndex" class="homeSignUpButton">Cancel</button>
 </div>
