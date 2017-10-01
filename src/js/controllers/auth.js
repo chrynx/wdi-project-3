@@ -1,3 +1,4 @@
+
 angular
   .module('hiddenTravellr')
   .controller('RegisterCtrl', RegisterCtrl)

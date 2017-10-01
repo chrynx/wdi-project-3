@@ -38,7 +38,7 @@ City
   }, {
     name: 'Paris',
     country: 'France',
-    image: 'http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/France/Paris/paris-attractions-xlarge.jpg',
+    image: 'https://i.ytimg.com/vi/_FYKIhJZdaI/maxresdefault.jpg',
     description: 'London is a great place in the middle of the world'
   }, {
     name: 'Munich',

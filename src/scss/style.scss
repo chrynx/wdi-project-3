@@ -3,6 +3,7 @@ html {
   box-sizing: border-box;
   body {
     // -------------------GLOBAL STYLES-------------------
+    overflow-x: hidden;
       .homeSignUpButton {
       animation: fadein 1s;
       position: absolute;
@@ -80,6 +81,7 @@ html {
       }
 
       h1 {
+        line-height: 1.2;
         animation: fadein 2s;
         opacity: 0.8;
         text-transform: uppercase;
@@ -165,7 +167,7 @@ html {
       position: relative;
       h1 {
         animation: fadein 1s;
-        line-height: 1.1;
+        line-height: 1.17;
         font-family: 'Erica One', curvise;
         color: white;
         opacity: 0.8;
