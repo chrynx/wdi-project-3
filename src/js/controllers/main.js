@@ -36,7 +36,7 @@ function MainCtrl($rootScope, $state, $auth, $transitions) {
 
   function logout() {
     $auth.logout();
-    $state.go('login');
+    $state.go('citiesIndex');
   }
 
   vm.logout = logout;

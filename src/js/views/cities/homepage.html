@@ -1,8 +1,10 @@
 <div class="landing">
   <h1>Hidden Travellr</h1>
   <p> Where all the hidden treasures can be found</p>
-  <button ui-sref="login" class="homeLogInButton">Log In</button>
-  <button ui-sref="register" class="homeSignUpButton">Sign Up</button>
+  <button ng-show="!main.isAuthenticated()" ui-sref="login" class="homeLogInButton">Log In</button>
+  <button ng-show="!main.isAuthenticated()" ui-sref="register" class="homeSignUpButton">Sign Up</button>
+  <button ng-show="main.isAuthenticated()" ng-click="main.logout()" class="homeSignUpButton">Logout</button>
+
 </div>
 <div style="animation: fadein 5s;" ng-repeat="city in citiesIndex.all">
 <div class="homeCity" ui-sref="citiesShow({ id: city.id })">
