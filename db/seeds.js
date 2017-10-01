@@ -65,9 +65,11 @@ City
     country: 'Belgium',
     image: 'https://www.thonhotels.com/siteassets/hoteller/belgia/brussel/brussel-grand-place-destinasjon.jpg',
     description: 'London is a great place in the middle of the world'
-  }]).then((cities) => {
+  }
+  ])
+  .then((cities) => {
     console.log(`${cities.length} categories created`);
-    Location
+    return Location
       .create([{
         name: 'General Assembly',
         image: 'https://ga-shop-production-herokuapp-com.global.ssl.fastly.net/assets/images/gallery-1_1WzYk.jpg',
@@ -76,7 +78,8 @@ City
         rating: 5,
         priceRating: 5
       }])
-      .then(locations => console.log(`${locations.length} locations created!`))
-      .catch(err => console.log(err))
-      .finally(() => mongoose.connection.close());
-  });
+      .then(locations => console.log(`${locations.length} locations created!`));
+
+  })
+  .catch(err => console.log(err))
+  .finally(() => mongoose.connection.close());
