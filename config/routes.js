@@ -13,9 +13,10 @@ router.route('/cities/:id')
   .get(cities.show);
 // ----------------
 router.route('/locations')
-  .get(locations.index)
-  .post(secureRoute, locations.create);
+  .get(locations.index);
 
+router.route('/locations/new')
+  .post(secureRoute, locations.create);
 
 router.route('/locations/:id')
   .get(locations.show)
