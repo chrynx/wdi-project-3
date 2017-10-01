@@ -1,10 +1,10 @@
 angular
   .module('hiddenTravellr')
-  .factory('City', City );
+  .factory('City', City);
 
 City.$inject = ['$resource'];
 function City($resource){
-  return $resource('/api/cities/:id', { id: '@id'}, {
+  return $resource('http://localhost:7000/api/cities/:id', { id: '@_id'}, {
     'update': { method: 'PUT' }
   });
 }

@@ -1,28 +1,54 @@
 <!DOCTYPE html>
 <html ng-app="hiddenTravellr">
 <head>
+  <title>Hidden Travellr</title>
   <base href="/">
-  <meta charset="utf-8">
-  <title>WDI Project 3</title>
-  <link href="https://fonts.googleapis.com/css?family=Erica+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
   <!-- endinject -->
 </head>
-<body ng-controller="MainCtrl as main">
-  <main ui-view></main>
+<body>
 
-<footer>
-  <div class="footerLeft">
-    Hidden Travellr
-  </div>
-  <div class="footerCenter">
-    Made with &hearts; by chrynx & GoranBt
-  </div>
-  <div class="footerRight">
-    © 2017
-  </div>
-</footer>
+  <nav class="nav has-shadow">
+    <div class="nav-left">
+      <a class="nav-item" ui-sref="locationsIndex">
+        Hidden Travellr
+      </a>
+    </div>
+
+    <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+    <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+    <span class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+
+    <!-- This "nav-menu" is hidden on mobile -->
+    <!-- Add the modifier "is-active" to display it on mobile -->
+    <div class="nav-right nav-menu">
+      <a class="nav-item" ui-sref="locationsIndex">
+        All Locations
+      </a>
+      <a class="nav-item" ui-sref="locationsNew">
+        New Location
+      </a>
+      <a class="nav-item" ng-show="!main.isAuthenticated" ui-sref="login">
+        Log In
+      </a>
+      <a class="nav-item" ng-show="!main.isAuthenticated" ui-sref="register">
+        Register
+      </a>
+      <a class="nav-item" ng-click="logout()" ng-show="main.isAuthenticated"ui-sref="locationsIndex">
+        Logout
+      </a>
+
+    </div>
+  </nav>
+
+  <main class="container" ui-view></main>
+
 </body>
 </html>

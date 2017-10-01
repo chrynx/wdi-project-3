@@ -26,7 +26,7 @@ function LoginCtrl($auth, $state) {
   function submit() {
     $auth.login(vm.credentials)
       .then(() => {
-        $state.go('citiesIndex');
+        $state.go('locationsIndex');
       });
   }
 
@@ -39,6 +39,6 @@ function LogoutCtrl($auth, $state) {
   vm.credentials = {};
   $auth.logout()
     .then(() => {
-      $state.go('citiesIndex');
+      $state.go('locationsIndex');
     });
 }
