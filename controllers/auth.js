@@ -2,14 +2,14 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
 
-function register(req, res) {
+function register(req, res, next) {
   User
     .create(req.body)
     .then(() => res.json({ message: 'Registration successful'}))
-    .catch((err) => res.json(err));
+    .catch(next);
 }
 
-function login(req, res) {
+function login(req, res, next) {
   User
     .findOne({ email: req.body.email })
     .then((user) => {
@@ -18,10 +18,10 @@ function login(req, res) {
       const token = jwt.sign({ userId: user.id }, secret, { expiresIn: '1hr' });
       return res.json({ token, message: `Welcome back ${user.username}` });
     })
-    .catch((err) => res.json(err));
+    .catch(next);
 }
 
 module.exports = {
-  register: register,
-  login: login
+  register,
+  login
 };
