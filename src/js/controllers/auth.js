@@ -27,7 +27,10 @@ function LoginCtrl($auth, $state) {
   function submit() {
     if (vm.loginForm.$valid) {
       $auth.login(vm.credentials)
-        .then(() => $state.go('locationsIndex'))
+        .then(() => {
+          console.log('was able to log in');
+          $state.go('locationsIndex');
+        })
         .catch(() => $state.go('login'));
     }
   }
