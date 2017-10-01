@@ -23,12 +23,12 @@ City
   }, {
     name: 'Bangkok',
     country: 'Thailand',
-    image: 'http://static.asiawebdirect.com/m/bangkok/portals/bangkok-com/shared/teasersL/TOP10/top-10-historical-attractions/teaserMultiLarge/imageHilight/top-10-attractions-bangkok.jpg',
+    image: 'https://www.azamaraclubcruises.com/sites/default/files/heros/klong-toey-thailand_3.jpg',
     description: 'London is a great place in the middle of the world'
   }, {
     name: 'Barcelona',
     country: 'Spain',
-    image: 'http://barcelona.inno-forum.org/wp-content/uploads/sites/5/2017/02/barcelona-rutas-turisticas-alternativas.jpg',
+    image: 'http://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Spain/Barcelona/Barcelona%20beach-xxlarge.jpg',
     description: 'London is a great place in the middle of the world'
   }, {
     name: 'Manila',
@@ -68,7 +68,7 @@ City
   }
   ])
   .then((cities) => {
-    console.log(`${cities.length} categories created`);
+    console.log(`${cities.length} cities created`);
     return Location
       .create([{
         name: 'General Assembly',
