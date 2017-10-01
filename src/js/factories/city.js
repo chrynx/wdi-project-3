@@ -4,7 +4,7 @@ angular
 
 City.$inject = ['$resource'];
 function City($resource){
-  return $resource('http://localhost:7000/api/cities/:id', { id: '@_id'}, {
+  return $resource('/api/cities/:id', { id: '@id'}, {
     'update': { method: 'PUT' }
   });
 }

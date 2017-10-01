@@ -29,22 +29,13 @@
     <!-- This "nav-menu" is hidden on mobile -->
     <!-- Add the modifier "is-active" to display it on mobile -->
     <div class="nav-right nav-menu">
-      <a class="nav-item" ui-sref="locationsIndex">
-        All Locations
-      </a>
-      <a class="nav-item" ui-sref="locationsNew">
-        New Location
-      </a>
-      <a class="nav-item" ng-show="!main.isAuthenticated" ui-sref="login">
-        Log In
-      </a>
-      <a class="nav-item" ng-show="!main.isAuthenticated" ui-sref="register">
-        Register
-      </a>
-      <a class="nav-item" ng-click="logout()" ng-show="main.isAuthenticated"ui-sref="locationsIndex">
-        Logout
-      </a>
-
+      <ul>
+        <li><a ui-sref="locationsIndex" ui-sref-active="active">All Locations</a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="locationsNew" ui-sref-active="active">Add a location</a></li>
+        <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
+        <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
+        <li ng-click="main.logout()" ng-if="main.isAuthenticated()"><a ui-sref="locationsIndex">Logout</a></li>
+    </ul>
     </div>
   </nav>
 

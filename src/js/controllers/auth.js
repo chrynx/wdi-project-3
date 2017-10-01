@@ -1,9 +1,7 @@
-
 angular
   .module('hiddenTravellr')
   .controller('RegisterCtrl', RegisterCtrl)
-  .controller('LoginCtrl', LoginCtrl)
-  .controller('LogoutCtrl', LogoutCtrl);
+  .controller('LoginCtrl', LoginCtrl);
 
 RegisterCtrl.$inject = ['$auth', '$state'];
 function RegisterCtrl($auth, $state) {
@@ -11,11 +9,13 @@ function RegisterCtrl($auth, $state) {
   vm.user = {};
 
   function submit() {
-    $auth.signup(vm.user)
-      .then(() => {
-        $state.go('login');
-      });
+    if (vm.registerForm.$valid) {
+      $auth.signup(vm.user)
+        .then(() => $state.go('login'))
+        .catch(() => $state.go('register'));
+    }
   }
+
   vm.submit = submit;
 }
 
@@ -23,11 +23,13 @@ LoginCtrl.$inject = ['$auth', '$state'];
 function LoginCtrl($auth, $state) {
   const vm = this;
   vm.credentials = {};
+
   function submit() {
-    $auth.login(vm.credentials)
-      .then(() => {
-        $state.go('locationsIndex');
-      });
+    if (vm.loginForm.$valid) {
+      $auth.login(vm.credentials)
+        .then(() => $state.go('locationsIndex'))
+        .catch(() => $state.go('login'));
+    }
   }
 
   vm.submit = submit;

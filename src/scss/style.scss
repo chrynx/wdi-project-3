@@ -6,3 +6,16 @@ $family-serif: 'Playfair Display', serif;
 $family-primary: $family-serif;
 
 @import "bulma/bulma";
+
+ul {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  margin: 2px 20px;
+}
+a {
+  text-decoration: none;
+  color: grey;
+}

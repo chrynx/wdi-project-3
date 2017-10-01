@@ -4,7 +4,7 @@ angular
 
 Location.$inject = ['$resource'];
 function Location($resource){
-  return $resource('http://localhost:7000/api/locations/:id', { id: '@_id'}, {
+  return $resource('/api/locations/:id', { id: '@id'}, {
     'update': { method: 'PUT' }
   });
 }
