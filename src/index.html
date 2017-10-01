@@ -11,6 +11,9 @@
   <!-- endinject -->
 </head>
 <body ng-controller="MainCtrl as main">
+  <div class="message" ng-if="main.message">
+      <p>{{ main.message }}</p>
+    </div>
   <main ui-view></main>
 
 <footer>
