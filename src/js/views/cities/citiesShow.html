@@ -36,6 +36,12 @@
   <!-- this is 2/3 -->
   <div class="twoThird">
     <button style="display: block; margin: 5px 0;"> Create Location </button>
-    user locations
+    <div ng-repeat="location in citiesShow.city.locations">
+      Name: {{ location.name }}
+      Image: <img src="{{ location.image }}">,
+      Description: {{ location.description }},
+      Rating: {{ location.rating }}
+      Price Rating: {{ location.priceRating }},
+    </div>
   </div>
 </div>
