@@ -3,7 +3,7 @@ const Location = require('../models/location');
 function indexRoute(req, res, next) {
   Location
     .find()
-    .populate('city')
+    .populate('city createdBy')
     .exec()
     .then((locations) => res.json(locations))
     .catch(next);
@@ -19,7 +19,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Location
     .findById(req.params.id)
-    .populate('city')
+    .populate('city createdBy comments.createdBy')
     .exec()
     .then((location) => {
       if(!location) return res.notFound();
@@ -56,10 +56,46 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+function addCommentRoute(req, res, next) {
+
+  req.body.createdBy = req.currentUser;
+
+  Location
+    .findById(req.params.id)
+    .exec()
+    .then((location) => {
+      if(!location) return res.notFound();
+
+      const comment = location.comments.create(req.body);
+      location.comments.push(comment);
+
+      return location.save()
+        .then(() => res.json(comment));
+    })
+    .catch(next);
+}
+function deleteCommentRoute(req, res, next) {
+  Location
+    .findById(req.params.id)
+    .exec()
+    .then((location) => {
+      if(!location) return res.notFound();
+
+      const comment = location.comments.id(req.params.commentId);
+      comment.remove();
+
+      return location.save();
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   create: createRoute,
   show: showRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  addComment: addCommentRoute,
+  deleteComment: deleteCommentRoute
 };

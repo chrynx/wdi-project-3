@@ -15,6 +15,12 @@ router.route('/locations/:id')
   .put(secureRoute, locations.update)
   .delete(secureRoute, locations.delete);
 
+router.route('/locations/:id/comments')
+  .post(secureRoute, locations.addComment);
+
+router.route('/locations/:id/comments/:commentId')
+  .delete(secureRoute, locations.deleteComment);
+
 router.route('/cities')
   .get(cities.index)
   .post(secureRoute, cities.create);

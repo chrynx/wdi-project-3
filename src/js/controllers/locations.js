@@ -29,9 +29,10 @@ function LocationsNewCtrl($state, Location, City) {
   }
 }
 
-LocationsShowCtrl.$inject = ['$state', 'Location'];
-function LocationsShowCtrl($state, Location) {
+LocationsShowCtrl.$inject = ['$state', 'Location','$stateParams', 'PostComment' ];
+function LocationsShowCtrl($state, Location, $stateParams, PostComment) {
   const vm = this;
+  vm.newComment = {};
   vm.location = Location.get($state.params);
   vm.delete = locationsDelete;
 
@@ -43,7 +44,32 @@ function LocationsShowCtrl($state, Location) {
         $state.go('locationsIndex');
       });
   }
+  function addComment() {
+    PostComment
+      .save({ locationId: vm.location.id }, vm.newComment)
+      .$promise
+      .then((comment) => {
+        console.log('comment', comment); 
+        vm.location.comments.push(comment);
+        vm.newComment = {};
+      });
+  }
+
+  function deleteComment(comment) {
+    PostComment
+      .delete({ locationId: vm.location.id, id: comment.id })
+      .$promise
+      .then(() => {
+        //locate the comment in the array of comments
+        const index = vm.location.comments.indexOf(comment);
+        //splice it from the array, take 1 element starting from that index
+        vm.location.comments.splice(index, 1);
+      });
+  }
+  vm.addComment = addComment;
+  vm.deleteComment = deleteComment;
 }
+
 
 LocationsEditCtrl.$inject = ['$state', 'Location', 'City'];
 function LocationsEditCtrl($state, Location, City) {
@@ -55,6 +81,7 @@ function LocationsEditCtrl($state, Location, City) {
   locationsShow();
 
   function locationsShow(){
+
     Location
       .get($state.params)
       .$promise
