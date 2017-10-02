@@ -50,7 +50,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('usersShow', {
       url: '/users/:id',
-      tamplateUrl: 'js/views/users/show.html',
+      templateUrl: '/js/views/users/show.html',
       controller: 'UsersShowCtrl as usersShow'
     });
 
