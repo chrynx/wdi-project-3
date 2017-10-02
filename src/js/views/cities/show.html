@@ -1,6 +1,6 @@
 <section class="section">
-  <google-map center="{ lat: citiesShow.city.lat, lng: citiesShow.city.lng}"></google-map>
+  <google-map locations="citiesShow.city.locations" center="{ lat: citiesShow.city.lat, lng: citiesShow.city.lng}"></google-map>
   <hr>
   {{ citiesShow.city.name }}, {{ citiesShow.city.country }}<br>
-  {{ citiesShow.city.description }}
+  {{ citiesShow.city.description }}  {{ citiesShow.city.locations }}
 </section>

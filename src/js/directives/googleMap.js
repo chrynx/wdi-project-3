@@ -4,8 +4,8 @@ angular
   .module('hiddenTravellr')
   .directive('googleMap', googleMap);
 
-googleMap.$inject = ['$http'];
-function googleMap($http) {
+googleMap.$inject = [];
+function googleMap() {
   let map = null;
   const markers = [];
   return {
@@ -13,13 +13,14 @@ function googleMap($http) {
     template: '<div id="map"> I am a Google Map!</div>',
     replace: true,
     scope: {
-      center: '='
+      center: '=',
+      locations: '='
     },
     link($scope, $element) {
 
       map =  new google.maps.Map($element[0], {
         center: { lat: 51.5074, lng: 0.1278},
-        zoom: 13
+        zoom: 2
       });
 
       const marker = new google.maps.Marker({
@@ -27,28 +28,19 @@ function googleMap($http) {
       });
 
       $scope.$watch('center', () => {
-        if(!$scope.center) return false;
+        if(!$scope.center.lat || !$scope.center.lng) return false;
         map.setCenter($scope.center);
         marker.setPosition($scope.center);
-        console.log(marker);
       });
-      getLocations();
+
+      $scope.$watch('locations', () => {
+        if(!$scope.locations) return false;
+        $scope.locations.forEach(addMarker);
+      });
     }
 
   };
-  function getLocations() {
 
-  // make a request to the TFL API to get the bike point data
-    $http.get('http://localhost:7000/api/locations')
-      .then((response) => {
-        console.log(response.data);
-        response.data.forEach((location) => {
-        // run this function once for each bike point location, and pass in the location object
-          addMarker(location);
-        });
-      });
-
-  }
   function addMarker(location) {
   // create an object in the correct format for Google maps to use ('lat' and 'lng' as keys, values as numbers)
     const latLng = { lat: location.lat, lng: location.lng };
