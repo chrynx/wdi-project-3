@@ -1,5 +1,12 @@
 <section class="section">
-  <google-map center="{ lat: citiesShow.city.lat, lng: citiesShow.city.lng}"></google-map>
+  <google-map locations="citiesShow.city.locations" center="{ lat: citiesShow.city.lat, lng: citiesShow.city.lng}"></google-map>
   <hr>
-  {{ citiesShow.city.name }}, {{ citiesShow.city.country }}
+  {{ citiesShow.city.name }}, {{ citiesShow.city.country }}<br>
+  {{ citiesShow.city.description }}  {{ citiesShow.city.locations }}
+
+  <div ng-repeat="location in citiesShow.city.locations">
+    {{ location.name }}<br>
+    {{ location.description }}
+    <img ng-src="{{ location.image }}">
+  </div>
 </section>

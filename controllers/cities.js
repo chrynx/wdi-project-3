@@ -18,6 +18,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   City
     .findById(req.params.id)
+    .populate('locations')
     .exec()
     .then((city) => {
       if(!city) return res.notFound();

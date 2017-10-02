@@ -5,7 +5,10 @@ function indexRoute(req, res, next) {
     .find()
     .populate('city createdBy user')
     .exec()
-    .then((locations) => res.json(locations))
+    .then((locations) => {
+      console.log('This is the response from the indexRoute of the locations controller', locations);
+      res.json(locations);
+    })
     .catch(next);
 }
 
@@ -20,7 +23,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Location
     .findById(req.params.id)
-    .populate('city createdBy comments.createdBy user')
+    .populate('city createdBy comments.createdBy')
     .exec()
     .then((location) => {
       if(!location) return res.notFound();

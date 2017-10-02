@@ -49,7 +49,7 @@ function LocationsShowCtrl($state, Location, $stateParams, PostComment) {
       .save({ locationId: vm.location.id }, vm.newComment)
       .$promise
       .then((comment) => {
-        console.log('comment', comment); 
+        console.log('comment', comment);
         vm.location.comments.push(comment);
         vm.newComment = {};
       });
@@ -92,6 +92,7 @@ function LocationsEditCtrl($state, Location, City) {
         // To make sure that when we send back the city, we're just sending back the id, not the whole city object
         // Originally vm.location.city is the whole object because we are populating it in the show controller in the Express API
         vm.location.city = vm.location.city.id;
+        vm.location.createdBy = vm.location.createdBy.id;
       });
   }
 
