@@ -42,10 +42,16 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: '/js/views/auth/login.html',
       controller: 'LoginCtrl as login'
     })
+
     .state('register', {
       url: '/register',
       templateUrl: '/js/views/auth/register.html',
       controller: 'RegisterCtrl as register'
+    })
+    .state('usersShow', {
+      url: '/users/:id',
+      tamplateUrl: 'js/views/users/show.html',
+      controller: 'UsersShowCtrl as usersShow'
     });
 
   $urlRouterProvider.otherwise('/');
