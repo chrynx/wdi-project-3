@@ -1,6 +1,6 @@
 angular
   .module('hiddenTravellr')
-  .factory('City', City );
+  .factory('City', City);
 
 City.$inject = ['$resource'];
 function City($resource){

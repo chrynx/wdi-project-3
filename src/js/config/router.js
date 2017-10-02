@@ -7,49 +7,41 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider
-    .state('citiesIndex', {
-      url: '/cities',
-      templateUrl: 'js/views/cities/homepage.html',
-      controller: 'CitiesIndexCtrl as citiesIndex'
-    })
-    .state('citiesShow', {
-      url: '/cities/:id',
-      templateUrl: 'js/views/cities/citiesShow.html',
-      controller: 'CitiesShowCtrl as citiesShow'
-    })
     .state('locationsIndex', {
-      url: '/locations',
-      templateUrl: 'js/views/cities/locationsNew.html',
-      controller: 'LocationsNewCtrl as locationsNew'
+      url: '/',
+      templateUrl: '/js/views/locations/index.html',
+      controller: 'LocationsIndexCtrl as locationsIndex'
     })
-
     .state('locationsNew', {
       url: '/locations/new',
-      templateUrl: 'js/views/cities/locationsNew.html',
+      templateUrl: '/js/views/locations/new.html',
       controller: 'LocationsNewCtrl as locationsNew'
     })
-
+    .state('citiesIndex', {
+      url: '/cities',
+      templateUrl: '/js/views/cities/index.html',
+      controller: 'CitiesIndexCtrl as citiesIndex'
+    })
     .state('locationsShow', {
       url: '/locations/:id',
-      templateUrl: 'js/views/cities/locationsShow.html',
+      templateUrl: '/js/views/locations/show.html',
       controller: 'LocationsShowCtrl as locationsShow'
     })
-
+    .state('locationsEdit', {
+      url: '/locations/:id/edit',
+      templateUrl: '/js/views/locations/edit.html',
+      controller: 'LocationsEditCtrl as locationsEdit'
+    })
     .state('login', {
       url: '/login',
-      templateUrl: 'js/views/auth/login.html',
+      templateUrl: '/js/views/auth/login.html',
       controller: 'LoginCtrl as login'
     })
     .state('register', {
       url: '/register',
-      templateUrl: 'js/views/auth/register.html',
+      templateUrl: '/js/views/auth/register.html',
       controller: 'RegisterCtrl as register'
-    })
-    .state('usersShow', {
-      url: '/users/:id',
-      templateUrl: 'js/views/cities/profile.html',
-      controller: 'UsersShowCtrl as usersShow'
     });
 
-  $urlRouterProvider.otherwise('/cities');
+  $urlRouterProvider.otherwise('/');
 }
