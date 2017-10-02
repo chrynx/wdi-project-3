@@ -1,0 +1,12 @@
+<div class="row user">
+  <div class="col-md-12">
+    <h3>{{ usersShow.user.username }}'s posts</h3>
+    <p ng-if="!usersShow.user.locations.length">0 posts</p>
+  </div>
+  <div ng-repeat="location in usersShow.user.locations" class="col-sm-6 col-md-4 col-lg-3">
+    <div class="posts__single">
+      <div ui-sref="locationsShow({ id: location.id })"></div>
+      <p><strong>{{ location.createdBy.username }}</strong></p>
+    </div>
+  </div>
+</div>

@@ -2,10 +2,11 @@
   <location-details location="locationsShow.location"></location-details>
 
   <div>
-    <button ng-if="main.isAuthenticated() && main.currentUserId === locationsShow.location.user.id" class="button is-small is-primary" ui-sref="locationsEdit({ id: locationsShow.location.id })">Edit</button>
-    <button ng-click="locationsShow.delete()" class="button" ng-if="main.isAuthenticated() && main.currentUserId === locationsShow.location.user.id">Delete</button>
+    <button ng-if="main.isAuthenticated() && main.currentUserId === locationsShow.location.createdBy.id" class="button is-small is-primary" ui-sref="locationsEdit({ id: locationsShow.location.id })">Edit</button>
+    <button ng-click="locationsShow.delete()" class="button" ng-if="main.isAuthenticated() && main.currentUserId === locationsShow.location.createdBy.id">Delete</button>
 
 </div>
+<a ui-sref="usersShow({id:locationsShow.location.createdBy.id})"><h3>{{ locationsShow.location.createdBy.username }}</h3></a>
 <div class="comments">
 <h2>Comments</h2>
 <p ng-if="!locationsShow.location.comments.length">0 comments</p>
