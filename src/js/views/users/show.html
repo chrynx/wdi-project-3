@@ -1,7 +1,7 @@
 <div class="row user">
   <div class="col-md-12">
-    <h3>{{ usersShow.user.username }}'s posts</h3>
-    <p ng-if="!usersShow.user.locations.length">0 posts</p>
+    <h3>{{ usersShow.user.username }}'s locations</h3>
+    <p ng-if="!usersShow.user.locations.length">0 locations</p>
   </div>
   <div ng-repeat="location in usersShow.user.locations" class="col-sm-6 col-md-4 col-lg-3">
     <div class="posts__single">
@@ -10,3 +10,5 @@
     </div>
   </div>
 </div>
+
+HERE: {{ usersShow }}

@@ -3,13 +3,14 @@ const Location = require('../models/location');
 function indexRoute(req, res, next) {
   Location
     .find()
-    .populate('city createdBy')
+    .populate('city createdBy user')
     .exec()
     .then((locations) => res.json(locations))
     .catch(next);
 }
 
 function createRoute(req, res, next) {
+  req.body.createdBy = req.currentUser;
   Location
     .create(req.body)
     .then((location) => res.status(201).json(location))
@@ -19,7 +20,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Location
     .findById(req.params.id)
-    .populate('city createdBy comments.createdBy')
+    .populate('city createdBy comments.createdBy user')
     .exec()
     .then((location) => {
       if(!location) return res.notFound();
