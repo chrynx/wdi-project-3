@@ -3,7 +3,6 @@ const City = require('../models/city');
 function indexRoute(req, res, next) {
   City
     .find()
-    .populate('user')
     .exec()
     .then((cities) => res.json(cities))
     .catch(next);
@@ -12,7 +11,6 @@ function indexRoute(req, res, next) {
 function createRoute(req, res, next) {
   City
     .create(req.body)
-    .populate('user')
     .then((city) => res.status(201).json(city))
     .catch(next);
 }
@@ -20,7 +18,6 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   City
     .findById(req.params.id)
-    .populate('user')
     .exec()
     .then((city) => {
       if(!city) return res.notFound();
@@ -33,7 +30,6 @@ function showRoute(req, res, next) {
 function updateRoute(req, res, next) {
   City
     .findById(req.params.id)
-    .populate('user')
     .exec()
     .then((city) => {
       if(!city) return res.notFound();

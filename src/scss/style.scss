@@ -7,6 +7,16 @@ $family-primary: $family-serif;
 
 @import "bulma/bulma";
 
+body {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+}
+
 ul {
   display: flex;
   align-items: center;
@@ -18,4 +28,18 @@ li {
 a {
   text-decoration: none;
   color: grey;
+}
+
+
+.columns.card {
+  height: 30vh;
+  margin-bottom: 10px;
+}
+
+
+// --------------GOOGLE MAPS---------------------
+#map {
+ height: 400px;
+ width: 100%;
+ border: 2px solid black;
 }

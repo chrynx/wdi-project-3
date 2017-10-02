@@ -22,6 +22,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: '/js/views/cities/index.html',
       controller: 'CitiesIndexCtrl as citiesIndex'
     })
+    .state('citiesShow', {
+      url: '/cities/:id',
+      templateUrl: '/js/views/cities/show.html',
+      controller: 'CitiesShowCtrl as citiesShow'
+    })
     .state('locationsShow', {
       url: '/locations/:id',
       templateUrl: '/js/views/locations/show.html',

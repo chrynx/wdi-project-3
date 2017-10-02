@@ -1,9 +1,11 @@
-<div>
-  <h2 class="title">{{ location.name }}</h2>
-  <h3>Description: <em>{{ location.description }}</em></h3>
-  <h4>City: <em>{{ location.city.name }}, {{ location.city.country }}</em></h4>
-  <p>Rating: <em>{{ location.rating }}</em></p>
-  <p>Price Rating: <em>{{ location.priceRating }}</em></p>
-  <p> Created By: {{ location.user.username }}
-  <img ng-src="{{ location.image }}">
-</div>
+<div ui-sref="locationsShow({ id: location.id })" class="columns card">
+  <div class="column is-4"><img ng-src="{{ location.image }}"></div>
+  <div class="column">
+    <h2 class="title">{{ location.name }}</h2>
+    <h3>Description: <em>{{ location.description }}</em></h3>
+    <h4>City: <em>{{ location.city.name }}, {{ location.city.country }}</em></h4>
+    <p>Rating: <em>{{ location.rating }}</em></p>
+    <p>Price Rating: <em>{{ location.priceRating }}</em></p>
+    <p> Created By: {{ location.user.username }}</p>
+    </div>
+  </div>
