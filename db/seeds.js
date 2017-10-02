@@ -16,12 +16,16 @@ City
     name: 'London',
     country: 'UK',
     image: 'http://www.placecage.com/1000/1000',
-    description: 'London is a nice city, consisting of multiple tourist locations and a diverse set of people.'
+    description: 'London is a nice city, consisting of multiple tourist locations and a diverse set of people.',
+    lat: 51.5074,
+    lng: 0.1278
   },{
     name: 'Paris',
     country: 'France',
     image: 'http://fillmurray.com/1000/1000',
-    description: 'Paris is nothing but culture. The vibrant city lights up at night.'
+    description: 'Paris is nothing but culture. The vibrant city lights up at night.',
+    lat: 48.8566,
+    lng: 2.3522
   }])
   .then((cities) => {
     console.log(`${cities.length} cities created`);

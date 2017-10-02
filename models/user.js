@@ -10,8 +10,8 @@ const userSchema = new mongoose.Schema({
 userSchema
   .virtual('locations', {
     ref: 'Location',
-    localField: 'id',
-    foreignField: 'user'
+    localField: '_id',
+    foreignField: 'createdBy'
   });
 
 userSchema

@@ -3,7 +3,7 @@ const Location = require('../models/location');
 function indexRoute(req, res, next) {
   Location
     .find()
-    .populate('city')
+    .populate('city user')
     .exec()
     .then((locations) => res.json(locations))
     .catch(next);
@@ -19,7 +19,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Location
     .findById(req.params.id)
-    .populate('city')
+    .populate('city user')
     .exec()
     .then((location) => {
       if(!location) return res.notFound();

@@ -1,5 +1,5 @@
 <section class="section">
-  <location-details location="locationsShow.location"></location-details>
+  <location-details style="height: 50vh;" location="locationsShow.location"></location-details>
 
   <div>
     <button ng-if="main.isAuthenticated() && main.currentUserId === locationsShow.location.user.id" class="button is-small is-primary" ui-sref="locationsEdit({ id: locationsShow.location.id })">Edit</button>
