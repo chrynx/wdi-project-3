@@ -5,7 +5,10 @@ function indexRoute(req, res, next) {
     .find()
     .populate('city createdBy')
     .exec()
-    .then((locations) => res.json(locations))
+    .then((locations) => {
+      console.log('This is the response from the indexRoute of the locations controller', locations);
+      res.json(locations);
+    })
     .catch(next);
 }
 
