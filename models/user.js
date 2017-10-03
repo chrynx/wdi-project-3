@@ -4,12 +4,16 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
+  profilePicture: String,
+  coverPicture: String,
+  summary: String,
+  origin: String,
   password: { type: String, required: true }
 });
 
 userSchema
-  .virtual('posts', {
-    ref: 'Post',
+  .virtual('locations', {
+    ref: 'Location',
     localField: '_id',
     foreignField: 'createdBy'
   });

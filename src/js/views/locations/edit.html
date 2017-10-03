@@ -1,0 +1,78 @@
+<section class="section">
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <form ng-submit="locationsEdit.update()">
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="name">Name</label>
+          </p>
+          <input type="text" class="input" id="name" name="name" ng-model="locationsEdit.location.name">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="image">Image Url</label>
+          </p>
+          <input type="text" class="input" id="image" name="image" ng-model="locationsEdit.location.image">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="description">Location Description</label>
+          </p>
+          <input type="text" class="input" id="description" name="description" ng-model="locationsEdit.location.description">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="image">City</label>
+          </p>
+          <span class="select is-fullwidth">
+            <select name="city" id="city" ng-model="locationsEdit.location.city">
+              <option ng-repeat="city in locationsEdit.cities" value="{{ city.id }}">{{ city.name }}</option>
+            </select>
+
+            <!-- <select name="city" id="city" ng-options="city.id as city.name for city in locationsEdit.cities" ng-model="locationsEdit.location.city">
+          </select> -->
+
+        </span>
+      </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="rating">Rating</label>
+          </p>
+          <input type="number" class="input" id="rating" name="rating" ng-model="locationsEdit.location.rating">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="priceRating">Price Rating</label>
+          </p>
+          <input type="text" class="input" id="priceRating" name="priceRating" ng-model="locationsEdit.location.priceRating">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="lat">Location Latitude</label>
+          </p>
+          <input type="text" class="input" id="lat" name="lat" ng-model="locationsEdit.location.lat">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="lng">Location Longitude</label>
+          </p>
+          <input type="text" class="input" id="lng" name="lng" ng-model="locationsEdit.location.lng">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <input type="submit" class="button is-primary is-fullwidth" value="Update">
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

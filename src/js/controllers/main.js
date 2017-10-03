@@ -2,12 +2,12 @@ angular
   .module('hiddenTravellr')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions'];
-function MainCtrl($rootScope, $state, $auth, $transitions) {
+MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions', 'User'];
+function MainCtrl($rootScope, $state, $auth, $transitions, User) {
   const vm = this;
   vm.navIsOpen = false;
   vm.isAuthenticated = $auth.isAuthenticated;
-  const protectedStates = ['locationsNew'];
+  const protectedStates = ['locationsNew', 'locationsEdit'];
 
   $rootScope.$on('error', (e, err) => {
     vm.message = err.data.message;
@@ -29,14 +29,18 @@ function MainCtrl($rootScope, $state, $auth, $transitions) {
       return $state.go('login');
     }
 
-    if($auth.getPayload()) vm.currentUserId = $auth.getPayload().userId;
+
+    if($auth.getPayload()) {
+      vm.currentUserId = $auth.getPayload().userId;
+      vm.currentUser = User.get({id: vm.currentUserId });
+    }
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
   });
 
   function logout() {
     $auth.logout();
-    $state.go('citiesIndex');
+    $state.go('login');
   }
 
   vm.logout = logout;

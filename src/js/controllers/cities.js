@@ -3,16 +3,24 @@ angular
   .controller('CitiesIndexCtrl', CitiesIndexCtrl)
   .controller('CitiesShowCtrl', CitiesShowCtrl);
 
-
 CitiesIndexCtrl.$inject = [ 'City'];
 function CitiesIndexCtrl(City) {
   const vm = this;
   vm.all = City.query();
-  window.scrollTo(0,0);
+  console.log('this is inside the citiesIndexCtrl', vm.all);
 }
-CitiesShowCtrl.$inject = ['$state',  'City'];
+
+CitiesShowCtrl.$inject = ['$state', 'City'];
 function CitiesShowCtrl($state, City) {
   const vm = this;
   vm.city = City.get($state.params);
-  window.scrollTo(0,0);
+  vm.delete = citiesDelete;
+  function citiesDelete(){
+    City.delete($state.params)
+      .$promise
+      .then((response) => {
+        console.log('This is after deleting a city', response);
+        $state.go('citiesIndex');
+      });
+  }
 }

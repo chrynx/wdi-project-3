@@ -3,17 +3,17 @@ const Location = require('../models/location');
 function indexRoute(req, res, next) {
   Location
     .find()
-    .populate('createdBy')
+    .populate('city createdBy user')
     .exec()
-    .then((locations) => res.json(locations))
+    .then((locations) => {
+      console.log('This is the response from the indexRoute of the locations controller', locations);
+      res.json(locations);
+    })
     .catch(next);
 }
 
 function createRoute(req, res, next) {
-
-  if(req.file) req.body.image = req.file.filename;
   req.body.createdBy = req.currentUser;
-
   Location
     .create(req.body)
     .then((location) => res.status(201).json(location))
@@ -23,13 +23,27 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Location
     .findById(req.params.id)
-    .populate('createdBy comments.createdBy')
+    .populate('city createdBy comments.createdBy')
     .exec()
     .then((location) => {
       if(!location) return res.notFound();
 
-      return res.json(location);
+      res.json(location);
     })
+    .catch(next);
+}
+
+function updateRoute(req, res, next) {
+  Location
+    .findById(req.params.id)
+    .exec()
+    .then((location) => {
+      if(!location) return res.notFound();
+
+      Object.assign(location, req.body);
+      return location.save();
+    })
+    .then((location) => res.json(location))
     .catch(next);
 }
 
@@ -45,7 +59,8 @@ function deleteRoute(req, res, next) {
     .then(() => res.status(204).end())
     .catch(next);
 }
-function addReviewRoute(req, res, next) {
+
+function addCommentRoute(req, res, next) {
 
   req.body.createdBy = req.currentUser;
 
@@ -63,8 +78,7 @@ function addReviewRoute(req, res, next) {
     })
     .catch(next);
 }
-
-function deleteReviewRoute(req, res, next) {
+function deleteCommentRoute(req, res, next) {
   Location
     .findById(req.params.id)
     .exec()
@@ -79,11 +93,13 @@ function deleteReviewRoute(req, res, next) {
     .then(() => res.status(204).end())
     .catch(next);
 }
+
 module.exports = {
   index: indexRoute,
   create: createRoute,
   show: showRoute,
+  update: updateRoute,
   delete: deleteRoute,
-  addReview: addReviewRoute,
-  deleteReview: deleteReviewRoute
+  addComment: addCommentRoute,
+  deleteComment: deleteCommentRoute
 };

@@ -6,31 +6,36 @@ const auth = require('../controllers/auth');
 const secureRoute = require('../lib/secureRoute');
 
 // --------------
-router.route('/cities')
-  .get(cities.index);
-// --------------------
-router.route('/cities/:id')
-  .get(cities.show);
-// ----------------
 router.route('/locations')
-  .get(locations.index);
-
-router.route('/locations/new')
+  .get(locations.index)
   .post(secureRoute, locations.create);
 
 router.route('/locations/:id')
   .get(locations.show)
-  .delete(locations.create);
+  .put(secureRoute, locations.update)
+  .delete(secureRoute, locations.delete);
 
-router.route('/locations/:id/reviews')
-  .post(secureRoute, locations.addReview);
-router.route('/locations/:id/reviews/:reviewId')
-  .delete(secureRoute, locations.deleteReview);
-// --------------------------
+router.route('/locations/:id/comments')
+  .post(secureRoute, locations.addComment);
+
+router.route('/locations/:id/comments/:commentId')
+  .delete(secureRoute, locations.deleteComment);
+
+router.route('/cities')
+  .get(cities.index)
+  .post(secureRoute, cities.create);
+
+router.route('/cities/:id')
+  .get(cities.show)
+  .put(secureRoute, cities.update)
+  .delete(secureRoute, cities.delete);
+// -----------------------
 router.route('/register')
   .post(auth.register);
+// ---------------------
 router.route('/login')
   .post(auth.login);
+// ---------------------
 router.route('/users/:id')
   .get(users.show);
 

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const reviewSchema = new mongoose.Schema({
-  text: { type: String, required: true },
+const commentSchema = new mongoose.Schema({
+  text: { type: String, required: true},
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 });
 
@@ -14,8 +14,8 @@ const locationSchema = new mongoose.Schema({
   priceRating: Number,
   lat: Number,
   lng: Number,
-  user: { type: mongoose.Schema.ObjectId, ref: 'User'},
-  reviews: [ reviewSchema ]
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User'},
+  comments: [ commentSchema ]
 });
 
 
