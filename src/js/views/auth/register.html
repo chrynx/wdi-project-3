@@ -10,6 +10,34 @@
         </div>
       </div>
       <div>
+        <label for="profilePicture">Profile Picture</label>
+        <input type="text" name="profilePicture" id="profilePicture" ng-model="register.user.profilePicture">
+        <div ng-messages="register.registerForm.profilePicture.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.profilePicture.$touched) && register.registerForm.profilePicture.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+      </div>
+      <div>
+        <label for="coverPicture">Cover Picture</label>
+        <input type="text" name="coverPicture" id="coverPicture" ng-model="register.user.coverPicture" >
+        <div ng-messages="register.registerForm.coverPicture.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.coverPicture.$touched) && register.registerForm.coverPicture.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+      </div>
+      <div>
+        <label for="summary">Summary</label>
+        <input type="textarea" name="summary" id="summary" ng-model="register.user.summary">
+        <div ng-messages="register.registerForm.summary.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.summary.$touched) && register.registerForm.summary.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+      </div>
+      <div>
+        <label for="origin">Origin</label>
+        <input type="textarea" name="origin" id="origin" ng-model="register.user.origin">
+        <div ng-messages="register.registerForm.origin.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.origin.$touched) && register.registerForm.origin.$invalid" class="error">
+          <div ng-message="required">Please enter a value for this field.</div>
+        </div>
+      </div>
+      <div>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" ng-model="register.user.email" required>
         <div ng-messages="register.registerForm.email.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.email.$touched) && register.registerForm.email.$invalid" class="error">
