@@ -1,3 +1,5 @@
+{{ locationsNew.location }}
+
 <section class="section">
   <div class="columns">
     <div class="column is-half is-offset-one-quarter">
@@ -7,7 +9,7 @@
           <p class="control">
             <label class="label" for="name">Name</label>
           </p>
-          <input type="text" class="input" id="name" name="name" ng-model="locationsNew.location.name">
+          <input type="text" class="input" id="name" places-autocomplete name="name" ng-model="locationsNew.location.name" lat="locationsNew.location.lat" lng="locationsNew.location.lng">
         </div>
 
         <div class="field">
