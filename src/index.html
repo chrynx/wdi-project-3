@@ -14,7 +14,7 @@
 
   <nav class="nav has-shadow">
     <div class="nav-left">
-      <a class="nav-item" ui-sref="locationsIndex">
+      <a style="padding: 0 10px;" class="nav-item" ui-sref="locationsIndex">
         Hidden Travellr
       </a>
     </div>
@@ -29,16 +29,17 @@
 
     <!-- This "nav-menu" is hidden on mobile -->
     <!-- Add the modifier "is-active" to display it on mobile -->
-    <div class="nav-right nav-menu">
+    <div  style="display: flex; align-items: center;width: 70v;" class="nav-menu">
       <ul>
+        <li></li>
         <li><a ui-sref="locationsIndex" ui-sref-active="active">All Locations</a></li>
         <li><a ui-sref="citiesIndex" ui-sref-active="active">All Cities</a></li>
         <li ng-if="main.isAuthenticated()"><a ui-sref="locationsNew" ui-sref-active="active">Add a location</a></li>
-        <li ng-if="main.isAuthenticated()"><a ui-sref="usersShow({ id: main.currentUserId })">Profile Page</a></li>
+        <li ng-if="main.isAuthenticated()"><a ui-sref="citiesNew" ui-sref-active="active">Add a city</a></li>
         <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
         <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
-        <li><a class="navbar-item" ui-sref="usersShow({ id: main.currentUser.id })"><img id="profilePicture" src="{{ main.currentUser.profilePicture }}">  Hi {{ main.currentUser.username}}!  </a></li>
-        <li ng-click="main.logout()" ng-if="main.isAuthenticated()"><a ui-sref="locationsIndex">Logout</a></li>
+        <li ng-if="main.isAuthenticated()"><a class="navbar-item" style="display: flex;align-items: center;" ui-sref="usersShow({ id: main.currentUser.id })"><img id="profilePicture" src="{{ main.currentUser.profilePicture }}"><span class="navBarWelcome">Welcome back, <strong style="color: white;">{{ main.currentUser.username}}</strong>!</span></a></li>
+        <li style="border-radius: 50px;background-color: white;padding: 2px 10px;" ng-click="main.logout()" ng-if="main.isAuthenticated()"><a style="color: #343a40;" ui-sref="locationsIndex">Logout</a></li>
     </ul>
     </div>
   </nav>

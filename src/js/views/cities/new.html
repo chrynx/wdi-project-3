@@ -1,0 +1,66 @@
+<section class="section">
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <form ng-submit="citiesNew.create()">
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="name">Name</label>
+          </p>
+          <input type="text" class="input" id="name" name="name" ng-model="citiesNew.city.name">
+        </div>
+        <div class="field">
+          <p class="control">
+            <label class="label" for="country">Country</label>
+          </p>
+          <input type="text" class="input" id="country" name="country" ng-model="citiesNew.city.country">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="image">Image Url</label>
+          </p>
+          <input type="text" class="input" id="image" name="image" ng-model="citiesNew.city.image">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="description">City Description</label>
+          </p>
+          <input type="text" class="input" id="description" name="description" ng-model="citiesNew.city.description">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="lat">City Latitude</label>
+          </p>
+          <input type="text" class="input" id="lat" name="lat" ng-model="citiesNew.city.lat">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <label class="label" for="lng">City Longitude</label>
+          </p>
+          <input type="text" class="input" id="lng" name="lng" ng-model="citiesNew.city.lng">
+        </div>
+
+        <div class="field">
+          <p class="control">
+            <input type="submit" class="button is-primary is-fullwidth" value="Add">
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+name: { type: String, required: true },
+country: { type: String, required: true},
+image: { type: String, required: true },
+description: { type: String, required: true },
+createdBy: { type: mongoose.Schema.ObjectId, ref: 'User'},
+lat: Number,
+lng: Number
