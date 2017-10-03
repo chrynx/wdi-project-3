@@ -2,8 +2,8 @@ angular
   .module('hiddenTravellr')
   .controller('MainCtrl', MainCtrl);
 
-MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions'];
-function MainCtrl($rootScope, $state, $auth, $transitions) {
+MainCtrl.$inject = ['$rootScope', '$state', '$auth', '$transitions', 'User'];
+function MainCtrl($rootScope, $state, $auth, $transitions, User) {
   const vm = this;
   vm.navIsOpen = false;
   vm.isAuthenticated = $auth.isAuthenticated;
@@ -30,7 +30,10 @@ function MainCtrl($rootScope, $state, $auth, $transitions) {
     }
 
 
-    if($auth.getPayload()) vm.currentUserId = $auth.getPayload().userId;
+    if($auth.getPayload()) {
+      vm.currentUserId = $auth.getPayload().userId;
+      vm.currentUser = User.get({id: vm.currentUserId });
+    }
     if(vm.stateHasChanged) vm.message = null;
     if(!vm.stateHasChanged) vm.stateHasChanged = true;
   });
