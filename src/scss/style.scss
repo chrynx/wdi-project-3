@@ -6,7 +6,17 @@ $family-serif: 'Playfair Display', serif;
 $family-primary: $family-serif;
 
 @import "bulma/bulma";
-
+html {
+    overflow: hidden;
+    height: 100%;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+    height: 100%;
+    overflow: auto;
+}
 body {
   box-sizing: border-box;
 }

@@ -17,6 +17,12 @@ userSchema
     localField: '_id',
     foreignField: 'createdBy'
   });
+userSchema
+  .virtual('cities', {
+    ref: 'City',
+    localField: '_id',
+    foreignField: 'createdBy'
+  });
 
 userSchema
   .virtual('passwordConfirmation')

@@ -5,6 +5,7 @@ const citySchema = new mongoose.Schema({
   country: { type: String, required: true},
   image: { type: String, required: true },
   description: { type: String, required: true },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User'},
   lat: Number,
   lng: Number
 });
