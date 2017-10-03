@@ -41,7 +41,9 @@
     </ul>
     </div>
   </nav>
-
+    <div class="message" ng-if="main.message">
+        <p>{{ main.message }}</p>
+    </div>
   <main class="container" ui-view></main>
 
 </body>
