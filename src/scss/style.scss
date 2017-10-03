@@ -34,13 +34,40 @@ ul {
 
 li {
   margin: 2px 20px;
+
 }
 a {
   text-decoration: none;
-  color: grey;
+  color: white;
 }
-
-
+.nav {
+  background-color: #343a40;
+  color: white;
+}
+nav div a.nav-item {
+  padding: 0;
+  border: 2px solid white;
+  border-left: none;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  color: white;
+}
+.userShowNavBar {
+  background-color: #343a40;
+  margin-top: 0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+.navBarWelcome {
+  margin-left: 10px;
+}
+.nav-menu ul {
+  border: 2px solid white;
+  border-right: none;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
 .columns.card {
   height: 30vh;
   margin-bottom: 10px;

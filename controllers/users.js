@@ -3,7 +3,7 @@ const User = require('../models/user');
 function showRoute(req, res, next) {
   User
     .findById(req.params.id)
-    .populate('locations')
+    .populate('locations cities')
     .exec()
     .then((user) => {
       if(!user) return res.notFound();

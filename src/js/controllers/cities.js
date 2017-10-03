@@ -1,7 +1,8 @@
 angular
   .module('hiddenTravellr')
   .controller('CitiesIndexCtrl', CitiesIndexCtrl)
-  .controller('CitiesShowCtrl', CitiesShowCtrl);
+  .controller('CitiesShowCtrl', CitiesShowCtrl)
+  .controller('CitiesNewCtrl', CitiesNewCtrl);
 
 CitiesIndexCtrl.$inject = [ 'City'];
 function CitiesIndexCtrl(City) {
@@ -20,6 +21,22 @@ function CitiesShowCtrl($state, City) {
       .$promise
       .then((response) => {
         console.log('This is after deleting a city', response);
+        $state.go('citiesIndex');
+      });
+  }
+}
+CitiesNewCtrl.$inject = ['$state', 'City', 'Location'];
+function CitiesNewCtrl($state, City, Location) {
+  const vm  = this;
+  vm.locations = Location.query();
+  vm.create = citiesCreate;
+
+  function citiesCreate(){
+    City
+      .save(vm.city)
+      .$promise
+      .then((response) => {
+        console.log('This is after creating a city', response);
         $state.go('citiesIndex');
       });
   }

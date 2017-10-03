@@ -27,6 +27,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: '/js/views/cities/show.html',
       controller: 'CitiesShowCtrl as citiesShow'
     })
+    .state('citiesNew', {
+      url: '/cities/new',
+      templateUrl: '/js/views/cities/new.html',
+      controller: 'CitiesNewCtrl as citiesNew'
+    })
     .state('locationsShow', {
       url: '/locations/:id',
       templateUrl: '/js/views/locations/show.html',
