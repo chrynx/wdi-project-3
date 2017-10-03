@@ -20,7 +20,7 @@ function googleMap() {
 
       map =  new google.maps.Map($element[0], {
         center: { lat: 51.5074, lng: 0.1278},
-        zoom: 2
+        zoom: 10
       });
 
       const marker = new google.maps.Marker({
