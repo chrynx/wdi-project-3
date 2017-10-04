@@ -11,7 +11,10 @@ $family-serif: 'Playfair Display', serif;
 $family-primary: $family-serif;
 
 @import "bulma/bulma";
-
+.column {
+  overflow-y: scroll;
+  height: 50vh;
+}
 .columns.card {
   height: 30vh;
   margin-bottom: 10px;

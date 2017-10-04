@@ -16,6 +16,11 @@ function CitiesShowCtrl($state, City) {
   const vm = this;
   vm.city = City.get($state.params);
   vm.delete = citiesDelete;
+  vm.places = [];
+  vm.type = 'bar';
+  vm.radius = 1000;
+  vm.photo = null;
+
   function citiesDelete(){
     City.delete($state.params)
       .$promise
@@ -24,6 +29,7 @@ function CitiesShowCtrl($state, City) {
         $state.go('citiesIndex');
       });
   }
+
 }
 CitiesNewCtrl.$inject = ['$state', 'City', 'Location'];
 function CitiesNewCtrl($state, City, Location) {

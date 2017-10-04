@@ -1,12 +1,38 @@
 <section class="section">
-  <google-map locations="citiesShow.city.locations" center="{ lat: citiesShow.city.lat, lng: citiesShow.city.lng}"></google-map>
+  <select ng-model="citiesShow.type">
+    <option value="airport">airport</option>
+    <option value="bar">bar</option>
+    <option value="bus_station">bus station</option>
+    <option value="cafe">cafe</option>
+    <option value="casino">casino</option>
+    <option value="hospital">hospital</option>
+    <option value="meal_takeaway">meal takeaway</option>
+    <option value="night_club">night club</option>
+    <option value="restaurant">restaurant</option>
+    <option value="subway_station">subway station</option>
+    <option value="train_station">train station</option>
+    <option value="travel_agency">travel agency</option>
+  </select>
+  <input type="range" ng-model="citiesShow.radius" name="radius" step="100" min="100" max="2500" ng-model-options="{ debounce: 250 }">
+
+  <google-map locations="citiesShow.city.locations" center="{ lat: citiesShow.city.lat, lng: citiesShow.city.lng}" places="citiesShow.places" type="citiesShow.type" radius="citiesShow.radius"></google-map>
   <hr>
+  <!-- {{ citiesShow.places}} -->
   {{ citiesShow.city.name }}, {{ citiesShow.city.country }}<br>
   {{ citiesShow.city.description }}  {{ citiesShow.city.locations }}
   <div class="columns">
     <div style="border: 2px solid black;" class="column is-4">
-
-      <!-- <google-map></google-map> -->
+      <div class="columns" ng-repeat="place in citiesShow.places" >
+        <div class="column is-4">
+          <img ng-src="{{ place.imageUrl }}">
+        </div>
+        <div class="column is-8">
+          Name: {{ place.name }}<br>
+          Address: {{ place.vicinity }}
+          <hr>
+          Rating: {{ place.rating }}
+        </div>
+      </div>
     </div>
     <div style="border: 2px solid black;" class="column is-8">
       <div ng-repeat="location in citiesShow.city.locations">
