@@ -12,27 +12,29 @@
 </head>
 <body ng-controller="MainCtrl as main">
 
+  <span class="homeButton"><a ui-sref="locationsIndex">Hidden Travellr</a>
   <nav>
     <div class="navDiv1">
     </div>
     <div class="navDiv2">
       <ul>
         <li><a ui-sref="locationsIndex">Hidden Travellr</a></li>
+        <li ng-if="main.isAuthenticated()"><a class="navbar-item welcome" ui-sref="usersShow({ id: main.currentUser.id })"><img id="profilePictureNav" src="{{ main.currentUser.profilePicture }}"><span class="navBarWelcome">Hi, <strong>{{ main.currentUser.username}}</strong>!</span></a></li>
         <li><a ui-sref="locationsIndex" ui-sref-active="active">All Locations</a></li>
         <li><a ui-sref="citiesIndex" ui-sref-active="active">All Cities</a></li>
         <li ng-if="main.isAuthenticated()"><a ui-sref="locationsNew" ui-sref-active="active">Add a location</a></li>
         <li ng-if="main.isAuthenticated()"><a ui-sref="citiesNew" ui-sref-active="active">Add a city</a></li>
         <li ng-if="!main.isAuthenticated()"><a ui-sref="login" ui-sref-active="active">Login</a></li>
         <li ng-if="!main.isAuthenticated()"><a ui-sref="register" ui-sref-active="active">Register</a></li>
-        <li ng-if="main.isAuthenticated()"><a class="navbar-item welcome" ui-sref="usersShow({ id: main.currentUser.id })"><img id="profilePictureNav" src="{{ main.currentUser.profilePicture }}"><br><span class="navBarWelcome">Welcome back:<br><strong>{{ main.currentUser.username}}</strong>!</span></a></li>
         <li ng-click="main.logout()" ng-if="main.isAuthenticated()"><a ui-sref="locationsIndex">Logout</a></li>
       </ul>
     </div>
     <div class="navDiv3">
     </div>
   </nav>
+  </span>
   <div class="message" ng-if="main.message">
-    <p>{{ main.message }}</p>
+    <!-- <p>{{ main.message }}</p> -->
   </div>
   <main ui-view></main>
 

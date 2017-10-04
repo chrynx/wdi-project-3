@@ -3,10 +3,16 @@
   <hr>
   {{ citiesShow.city.name }}, {{ citiesShow.city.country }}<br>
   {{ citiesShow.city.description }}  {{ citiesShow.city.locations }}
-
-  <div ng-repeat="location in citiesShow.city.locations">
-    {{ location.name }}<br>
-    {{ location.description }}
-    <img ng-src="{{ location.image }}">
+  <div class="columns">
+    <div style="border: 2px solid black;" class="column is-4">
+      <!-- <google-map></google-map> -->
+    </div>
+    <div style="border: 2px solid black;" class="column is-8">
+      <div ng-repeat="location in citiesShow.city.locations">
+        {{ location.name }}<br>
+        {{ location.description }}
+        <img ng-src="{{ location.image }}">
+      </div>
+    </div>
   </div>
 </section>

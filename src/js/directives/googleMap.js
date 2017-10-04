@@ -1,8 +1,8 @@
 /* global google:ignore */
 
 angular
-  .module('hiddenTravellr')
-  .directive('googleMap', googleMap);
+.module('hiddenTravellr')
+.directive('googleMap', googleMap);
 
 googleMap.$inject = [];
 function googleMap() {
@@ -22,7 +22,21 @@ function googleMap() {
         center: { lat: 51.5074, lng: 0.1278},
         zoom: 10
       });
+      // ------------------------------TRYING OUT THE NEARBY--------------
 
+      const service = new google.maps.places.PlacesService(map);
+
+      function addPlaceMarkers(results, status) {
+        console.log(results);
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          results.map(result => new google.maps.Marker({
+            map: map,
+            position: result.geometry.location
+          }));
+        }
+      }
+
+      // -------------------------------------------------------
       const marker = new google.maps.Marker({
         map: map
       });
@@ -31,7 +45,15 @@ function googleMap() {
         if(!$scope.center.lat || !$scope.center.lng) return false;
         map.setCenter($scope.center);
         marker.setPosition($scope.center);
-      });
+
+        var request = {
+          location: $scope.center,
+          radius: '500'
+          // type: ['locality']
+        };
+
+        service.nearbySearch(request, addPlaceMarkers);
+      }, true);
 
       $scope.$watch('locations', () => {
         if(!$scope.locations) return false;
@@ -42,7 +64,7 @@ function googleMap() {
   };
 
   function addMarker(location) {
-  // create an object in the correct format for Google maps to use ('lat' and 'lng' as keys, values as numbers)
+    // create an object in the correct format for Google maps to use ('lat' and 'lng' as keys, values as numbers)
     const latLng = { lat: location.lat, lng: location.lng };
     // create a new marker, and declare which map to add it to
     const icon = {
@@ -60,10 +82,10 @@ function googleMap() {
     // marker.addListener('click', () => {
     // // when the marker is clicked, run the createInfoWindow function, and pass in the marker object and the location object
     //   createInfoWindow(marker, location);
-    //   // $hotelShowName.val(location.name);
-    //   // $hotelShowAddress.val(location.formatted_address);
-    //   // $hotelShowAvailable.val(location.open_now);
-    //   // $hotelShowRating.val(location.rating);
+    //   $hotelShowName.val(location.name);
+    //   $hotelShowAddress.val(location.formatted_address);
+    //   $hotelShowAvailable.val(location.open_now);
+    //   $hotelShowRating.val(location.rating);
     //   infoWindow2(location);
     // });
 

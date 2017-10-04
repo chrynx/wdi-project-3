@@ -6,3 +6,21 @@
   80% { transform: rotate(-4deg);}
   100% { transform: rotate(0deg);}
 }
+
+
+@keyframes tall {
+  0% { height: 50px; }
+  20% { height: 100px; }
+  40% { height: 200px; }
+  60% { height: 300px; }
+  80% { height: 400px; }
+  100% { height: 500px; }
+}
+@keyframes wide {
+  0% { width: 50px; }
+  20% { width: 60px; }
+  40% { width: 80px; }
+  60% { width: 100px; }
+  80% { width: 150px; }
+  100% { width: 200px; }
+}

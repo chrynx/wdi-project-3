@@ -11,52 +11,54 @@
       <li><a ng-click="profileNavLocation()">Locations</a></li>
     </ul>
   </div>
+  <!-- ===== -->
   <div class="columns is-12">
-  <div class="column is-3" style="display: block;height: 50vh;overflow-y: scroll;">
-    <h1 style="font-weight: 700;margin: 5px auto;font-size: 14px;">Username: </h1>
-    <p class="box" style="font-size: 12px;">{{ usersShow.user.username }}</p>
-    <h1 style="font-weight: 700;margin: 5px auto;font-size: 14px;">Email: </h1>
-    <p class="box" style="font-size: 12px;">{{ usersShow.user.email }}</p>
-    <h1 style="font-weight: 700;margin: 5px auto;font-size: 14px;">Bio: </h1>
-    <p class="box" style="font-size: 12px;">{{ usersShow.user.summary }}</p>
-    <h1 style="font-weight: 700;margin: 5px auto;font-size: 14px;">From: </h1>
-    <p class="box" style="font-size: 12px;">{{ usersShow.user.origin }}</p>
-  </div>
-  <div class="column is-9" style="height: 50vh;overflow-y: scroll;" ng-show="profileCities">
-    <div class="columns">
-      <div class="column is-12">
-        <h3>{{ usersShow.user.username }}'s cities</h3>
-        <p ng-if="usersShow.user.cities.length === 1"> {{ usersShow.user.cities.length }} city added</p>
-        <p ng-if="usersShow.user.cities.length > 1"> {{ usersShow.user.cities.length }} cities added</p>
+    <div class="column is-3" style="margin-left: 20px;display: block;height: 50vh;overflow-y: scroll;">
+      <h1 style="font-weight: 700;margin: 5px auto;font-size: 14px;">Username: </h1>
+      <p class="box" style="font-size: 12px;">{{ usersShow.user.username }}</p>
+      <h1 style="font-weight: 700;margin: 5px auto;font-size: 14px;">Email: </h1>
+      <p class="box" style="font-size: 12px;">{{ usersShow.user.email }}</p>
+      <h1 style="font-weight: 700;margin: 5px auto;font-size: 14px;">Bio: </h1>
+      <p class="box" style="font-size: 12px;">{{ usersShow.user.summary }}</p>
+      <h1 style="font-weight: 700;margin: 5px auto;font-size: 14px;">From: </h1>
+      <p class="box" style="font-size: 12px;">{{ usersShow.user.origin }}</p>
+    </div>
+    <div class="column is-9" style="height: 50vh;overflow-y: scroll;" ng-show="profileCities">
+      <div class="columns">
+        <div class="column is-12">
+          <h3>{{ usersShow.user.username }}'s cities</h3>
+          <p ng-if="usersShow.user.cities.length === 1"> {{ usersShow.user.cities.length }} city added</p>
+          <p ng-if="usersShow.user.cities.length > 1"> {{ usersShow.user.cities.length }} cities added</p>
+        </div>
+      </div>
+      <div  ui-sref="citiesShow({ id: cities.id })" class="columns" ng-repeat="cities in usersShow.user.cities">
+        <div class="column is-3">
+          <img ng-src="{{ cities.image }}">
+        </div>
+        <div class="column is-9">
+          {{ cities.name }}<br>
+          {{ cities.description}}
+          <p><strong>{{ cities.createdBy.username }}</strong></p>
+        </div>
       </div>
     </div>
-    <div  ui-sref="citiesShow({ id: cities.id })" class="columns" ng-repeat="cities in usersShow.user.cities">
-      <div class="column is-3">
-        <img ng-src="{{ cities.image }}">
+    <div class="column is-9" style="height: 50vh;overflow-y: scroll;" ng-show="profileLocations">
+      <div class="columns">
+        <div class="column is-12">
+          <h3>{{ usersShow.user.username }}'s locations</h3>
+          <p ng-if="usersShow.user.locations.length === 1"> {{ usersShow.user.locations.length }} location added</p>
+          <p ng-if="usersShow.user.locations.length > 1"> {{ usersShow.user.locations.length }} locations added</p>
+        </div>
       </div>
-      <div class="column is-9">
-        {{ cities.name }}<br>
-        {{ cities.description}}
-        <p><strong>{{ cities.createdBy.username }}</strong></p>
-      </div>
-    </div>
-  </div>
-  <div class="column is-9" style="height: 50vh;overflow-y: scroll;" ng-show="profileLocations">
-    <div class="columns">
-      <div class="column is-12">
-        <h3>{{ usersShow.user.username }}'s locations</h3>
-        <p ng-if="usersShow.user.locations.length === 1"> {{ usersShow.user.locations.length }} location added</p>
-        <p ng-if="usersShow.user.locations.length > 1"> {{ usersShow.user.locations.length }} locations added</p>
-      </div>
-    </div>
-    <div  ui-sref="locationsShow({ id: location.id })" class="columns" ng-repeat="location in usersShow.user.locations">
-      <div class="column is-3">
-        <img ng-src="{{ location.image }}">
-      </div>
-      <div class="column is-9">
-        {{ location.name }}<br>
-        {{ location.description}}
-        <p><strong>{{ location.createdBy.username }}</strong></p>
+      <div  ui-sref="locationsShow({ id: location.id })" class="columns" ng-repeat="location in usersShow.user.locations">
+        <div class="column is-3">
+          <img ng-src="{{ location.image }}">
+        </div>
+        <div class="column is-9">
+          {{ location.name }}<br>
+          {{ location.description}}
+          <p><strong>{{ location.createdBy.username }}</strong></p>
+        </div>
       </div>
     </div>
   </div>
