@@ -18,7 +18,7 @@
     </div>
     <div class="navDiv2">
       <ul>
-        <li><a ui-sref="locationsIndex">Hidden Travellr</a></li>
+        <li><a style="text-decoration: underline;" ui-sref="locationsIndex">Hidden Travellr</a></li>
         <li ng-if="main.isAuthenticated()"><a class="navbar-item welcome" ui-sref="usersShow({ id: main.currentUser.id })"><img id="profilePictureNav" src="{{ main.currentUser.profilePicture }}"><span class="navBarWelcome">Hi, <strong>{{ main.currentUser.username}}</strong>!</span></a></li>
         <li><a ui-sref="locationsIndex" ui-sref-active="active">All Locations</a></li>
         <li><a ui-sref="citiesIndex" ui-sref-active="active">All Cities</a></li>

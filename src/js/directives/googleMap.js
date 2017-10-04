@@ -1,8 +1,8 @@
 /* global google:ignore */
 
 angular
-.module('hiddenTravellr')
-.directive('googleMap', googleMap);
+  .module('hiddenTravellr')
+  .directive('googleMap', googleMap);
 
 googleMap.$inject = [];
 function googleMap() {
@@ -68,9 +68,9 @@ function googleMap() {
     const latLng = { lat: location.lat, lng: location.lng };
     // create a new marker, and declare which map to add it to
     const icon = {
-      url: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAmdAAAAJDJlMDIwOWVhLTQyNTUtNDc0MS05Y2M1LTBmYjdkNTY4MTEwZg.jpg',
+      url: 'https://openclipart.org/download/247319/abstract-user-flat-3.svg',
       size: new google.maps.Size(60, 60),
-      scaledSize: new google.maps.Size(40, 40)
+      scaledSize: new google.maps.Size(20, 20)
     };
     const marker = new google.maps.Marker({
       position: latLng,

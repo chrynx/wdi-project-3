@@ -19,7 +19,7 @@ nav {
     height: auto;
     width: 200px;
     .navDiv1 {
-      padding-top: 30px auto;
+      opacity: 0;
     }
     .navDiv2{
       border: none;
@@ -53,53 +53,52 @@ nav {
       }
     }
     .navDiv3 {
-      padding-bottom: 30px auto;
+      opacity: 0;    }
     }
-  }
-  .navDiv1 {
-    margin: 2px auto;
-    position: relative;
-    border: 2px solid white;
-    height: 0;
-    width: 80%;
-  }
-  .navDiv2{
-    margin: 2px auto;
-    position: relative;
-    border: 2px solid white;
-    height: 0;
-    width: 80%;
-    ul {
-      opacity: 0;
-      li {
+    .navDiv1 {
+      margin: 2px auto;
+      position: relative;
+      border: 2px solid white;
+      height: 0;
+      width: 80%;
+    }
+    .navDiv2{
+      margin: 2px auto;
+      position: relative;
+      border: 2px solid white;
+      height: 0;
+      width: 80%;
+      ul {
         opacity: 0;
-        a {
+        li {
           opacity: 0;
-          strong {
+          a {
             opacity: 0;
+            strong {
+              opacity: 0;
+            }
           }
         }
       }
     }
+    .navDiv3 {
+      margin: 2px auto;
+      position: relative;
+      border: 2px solid white;
+      height: 0;
+      width: 80%;
+    }
   }
-  .navDiv3 {
-    margin: 2px auto;
-    position: relative;
-    border: 2px solid white;
-    height: 0;
-    width: 80%;
-  }
-}
 
-span.homeButton {
-  position: relative;
-  top: 0;
-  a {
-    text-decoration: none;
-    color: white;
+  span.homeButton {
+    position: relative;
+    top: 0;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    display: flex;
+    justify-content: flex-start;
+    font-size: 24px;
+    background-color: #343a40;
   }
-  display: flex;
-  justify-content: flex-start;
-  font-size: 24px;
-  background-color: #343a40;
-}
