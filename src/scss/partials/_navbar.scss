@@ -1,0 +1,94 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 50px;
+  z-index: 1000;
+  opacity: 0.5;
+  position: fixed;
+  overflow: hidden;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  &:hover {
+    transition: 0.5s;
+    opacity: 1;
+    height: 50vh;
+    width: 15%;
+    background-color: #343a40;
+    .navDiv1 {
+      opacity: 0;
+    }
+    .navDiv2{
+      margin: 2px auto;
+      position: relative;
+      border: 2px solid black;
+      height: 50vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      ul {
+        opacity: 1;
+        color: white;
+        width: 100%;
+        li {
+          opacity: 1;
+          color: white;
+          margin-top: 10px;
+          border: 1px solid white;
+
+          border-radius: 10px;
+          a {
+            opacity: 1;
+            color: white;
+            font-size: 20px;
+            strong {
+              opacity: 1;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .navDiv3 {
+      opacity: 0;
+    }
+  }
+  .navDiv1 {
+    margin: 2px auto;
+    position: relative;
+    border: 2px solid black;
+    height: 0;
+    width: 80%;
+  }
+  .navDiv2{
+    margin: 2px auto;
+    position: relative;
+    border: 2px solid black;
+    height: 0;
+    width: 80%;
+    ul {
+      opacity: 0;
+      li {
+        opacity: 0;
+        a {
+          opacity: 0;
+          strong {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  .navDiv3 {
+    margin: 2px auto;
+    position: relative;
+    border: 2px solid black;
+    height: 0;
+    width: 80%;
+  }
+}

@@ -1,3 +1,8 @@
+@import "partials/_global.scss";
+@import "partials/_navbar.scss";
+@import "partials/_signup.scss";
+@import "partials/_keyframes.scss";
+@import "partials/_maps.scss";
 @import "bulma/sass/utilities/initial-variables";
 
 $primary: #6ab5ff;
@@ -6,68 +11,15 @@ $family-serif: 'Playfair Display', serif;
 $family-primary: $family-serif;
 
 @import "bulma/bulma";
-html {
-  overflow: hidden;
-  height: 100%;
-}
-::-webkit-scrollbar {
-  display: none;
-}
-body {
-  background-color: rgba(240,240,240,0.5);
-  height: 100%;
-  overflow: auto;
-  box-sizing: border-box;
-}
-img {
-  max-width: 100%;
-  max-height: 100%;
-  width: 100%;
-}
 
-ul {
-  display: flex;
-  align-items: center;
+.columns.card {
+  height: 30vh;
+  margin-bottom: 10px;
 }
-
-li {
-  margin: 2px 20px;
-
-}
-a {
-  text-decoration: none;
-  color: white;
-}
-
-nav div ul.nav-item {
-
-  li, a {
-    padding: 0;
-    color: white;
-    &:hover {
-      animation: shake 1s;
-      color: white;
-    }
-  }
-  border: 2px solid white;
-  border-left: none;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-.nav-item .welcome {
-    &:hover {
-      animation: none;
-    }
-}
-.navInfo {
-  display: flex;
-  justify-content: center;
-  p {
-    border-top: 2px solid black;
-    position: fixed;
-    font-size: 20px;
-    top: 20px;
-  }
+#profilePictureNav {
+  border-radius: 10px;
+  height: 30px;
+  width: 30px;
 }
 .userShowNavBar {
   background-color: #343a40;
@@ -75,101 +27,15 @@ nav div ul.nav-item {
   padding: 10px 0;
   display: flex;
   justify-content: center;
-}
-.nav {
-  height: 20px;
-  opacity: 0;
-  background-color: #343a40;
-  color: white;
-  &:hover {
-    height: 50px;
-    opacity: 1;
-    transition: 0.2s;
+  ul {
+    display: flex;
+    align-items: center;
   }
-  .navBarWelcome {
-    margin-left: 10px;
+  li {
+    margin: 2px 20px;
   }
-  .nav-menu ul {
-    li, a {
-      &:hover {
-        animation: shake 1s;
-        color: white;
-      }
-    }
-    border: 2px solid white;
-    border-right: none;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+  a {
+    text-decoration: none;
+    color: white;
   }
-}
-.columns.card {
-  height: 30vh;
-  margin-bottom: 10px;
-}
-#profilePictureNav {
-  height: 30px;
-  width: 30px;
-}
-.container {
-  width: 100%;
-  overflow-x: hidden;
-}
-.landing {
-  height: 100vh;
-  width: 100%;
-  // background-image: url('http://img64.laughinggif.com/pic/HTTP3d3dy5teXRpbnlwaG9uZS5jb20vdXBsb2Fkcy91c2Vycy9ndXJraXMvOTc2MTcuZ2lm.gif');
-  // background-size: cover;
-  h1 {
-    position: relative;
-    top: 30%;
-    left: 50%;
-    font-size: 40px;
-    text-transform: uppercase;
-
-  }
-  p {
-    position: relative;
-    top: 30%;
-    left: 50%;
-    font-size: 24px;
-    text-transform: uppercase;
-
-  }
-  .landingSignUpForm {
-    position: relative;
-    top: 15%;
-    left: 100px;
-    width: 25%;
-    form {
-      input {
-        outline-color: none;
-        outline: none;
-        width: 100%;
-        margin: 0 auto;
-      }
-      label {
-        display: block;
-      }
-    }
-    button {
-      margin-top: 10px;
-      width: 100%;
-    }
-  }
-}
-
-// --------------GOOGLE MAPS---------------------
-#map {
-  height: 400px;
-  width: 100%;
-  border: 2px solid black;
-}
-// ------------------KEYFRAMES-------------------
-@keyframes shake {
-  0% { transform: rotate(0deg);}
-  20% { transform: rotate(10deg);}
-  40% { transform: rotate(-8deg);}
-  60% { transform: rotate(6deg);}
-  80% { transform: rotate(-4deg);}
-  100% { transform: rotate(0deg);}
 }
