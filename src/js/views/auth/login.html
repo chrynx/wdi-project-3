@@ -1,7 +1,8 @@
 <div class="landing">
     <h1>Enter your details</h1>
     <p>Log in to be able to see a world of beauty</p>
-    <form class="landingSignUpForm" name="login.loginForm" ng-submit="login.submit()" novalidate>
+    <div class="landingSignUpForm">
+    <form name="login.loginForm" ng-submit="login.submit()" novalidate>
       <div>
         <label for="email">Email</label>
         <input type="email" name="email" id="email" ng-model="login.credentials.email" required>
@@ -17,7 +18,8 @@
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
-      <button class="button">Login</button>
+      <button class="button is-primary">Login</button>
     </form>
     <button ui-sref="locationsIndex" class="homeSignUpButton">Cancel</button>
+  </div>
 </div>
