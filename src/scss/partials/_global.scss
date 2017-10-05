@@ -1,3 +1,5 @@
+@import "partials/_colors.scss";
+
 html {
   overflow: hidden;
   height: 100%;
@@ -6,12 +8,13 @@ html {
   display: none;
 }
 body {
-  background-color: rgba(240,240,240,0.5);
+  background-color: $navyBlue;
   height: 100%;
   overflow: auto;
   box-sizing: border-box;
 }
 main {
+  margin-top: 8vh;
   overflow-x: hidden;
 }
 img {

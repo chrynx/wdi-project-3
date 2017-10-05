@@ -1,0 +1,20 @@
+@import "partials/_colors.scss";
+
+.userShowNavBar {
+  background-color: $navyBlue;
+  margin-top: 0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  ul {
+    display: flex;
+    align-items: center;
+  }
+  li {
+    margin: 2px 20px;
+  }
+  a {
+    text-decoration: none;
+    color: $eggshell;
+  }
+}

@@ -1,0 +1,52 @@
+@import "partials/_colors.scss";
+
+.cityShowTop {
+  span {
+    font-size: 40px;
+  }
+  select {
+    text-transform: uppercase;
+  }
+  height: 40vh;
+  h2 {
+    font-size: 24px;
+  }
+}
+.cityShowLocations {
+  height: 40vh;
+  overflow-y: scroll;
+}
+.cityIndex {
+  border: 5px solid $navyBlue;
+  h2 {
+    position: relative;
+    font-size: 120px;
+    color: $eggshell;
+    text-transform: uppercase;
+  }
+  height: 30vh;
+}
+.cityIndexSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $leather;
+  color: $navyBlue;
+  input {
+    margin-left: 10px;
+    width: 20%;
+  }
+}
+
+
+.cityCreate {
+  background-color: $coral;
+  height: 92vh;
+  width: 100%;
+  form {
+    margin-top: 50px;
+    label {
+      color: $navyBlue;
+    }
+  }
+}

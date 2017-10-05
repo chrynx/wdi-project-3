@@ -1,104 +1,101 @@
-nav {
-  transition: 0.2s;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  z-index: 1000;
-  position: fixed;
-  overflow: hidden;
-  top: 10px;
-  right: 20px;
-  width: 200px;
-  height: 20px;
-  &:hover {
-    background-color: #343a40;
-    opacity: 1;
-    height: auto;
-    width: 200px;
-    .navDiv1 {
-      opacity: 0;
-    }
-    .navDiv2{
-      border: none;
-      margin: 20px auto;
-      position: relative;
-      height: auto;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      ul {
-        opacity: 1;
-        color: white;
-        width: 100%;
-        font-size: 20px;
-        li {
-          background-color: #343a40;
-          opacity: 1;
-          color: white;
-          margin-top: 10px;
-          border-radius: 10px;
-          a {
-            opacity: 1;
-            color: white;
-            strong {
-              opacity: 1;
-              color: white;
-            }
-          }
-        }
-      }
-    }
-    .navDiv3 {
-      opacity: 0;    }
-    }
-    .navDiv1 {
-      margin: 2px auto;
-      position: relative;
-      border: 2px solid white;
-      height: 0;
-      width: 80%;
-    }
-    .navDiv2{
-      margin: 2px auto;
-      position: relative;
-      border: 2px solid white;
-      height: 0;
-      width: 80%;
-      ul {
-        opacity: 0;
-        li {
-          opacity: 0;
-          a {
-            opacity: 0;
-            strong {
-              opacity: 0;
-            }
-          }
-        }
-      }
-    }
-    .navDiv3 {
-      margin: 2px auto;
-      position: relative;
-      border: 2px solid white;
-      height: 0;
-      width: 80%;
-    }
-  }
+@import "partials/_colors.scss";
 
-  span.homeButton {
-    position: relative;
-    top: 0;
+nav, .homePage, .allLocations, .allCities, .addLocation, .addCity, .login, .register, .logout, .welcome {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-left: 2px solid $navyBlue;
+}
+
+nav {
+  z-index: 9001;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 8vh;
+  .homePage {
+    background: $navyBlue;
+    height: 8vh;
+    flex: auto;
     a {
-      text-decoration: none;
       color: white;
     }
-    display: flex;
-    justify-content: flex-start;
-    font-size: 24px;
-    background-color: #343a40;
   }
+  .allLocations {
+    background: $leather;
+    height: 8vh;
+    flex: auto;
+    text-align: center;
+    a {
+      color: white;
+    }
+  }
+  .allCities {
+    background: $leather;
+    height: 8vh;
+    flex: auto;
+    text-align: center;
+    a {
+      color: white;
+    }
+  }
+  .addLocation {
+    background: $coral;
+    height: 8vh;
+    flex: auto;
+    text-align: center;
+    a {
+      color: white;
+    }
+  }
+  .addCity {
+    background: $coral;
+    height: 8vh;
+    flex: auto;
+    text-align: center;
+    a {
+      color: white;
+    }
+  }
+  .login {
+    background: $eggshell;
+    height: 8vh;
+    flex: auto;
+    text-align: center;
+    a {
+      color: $navyBlue;
+    }
+  }
+  .register {
+    background: $eggshell;
+    height: 8vh;
+    flex: auto;
+    text-align: center;
+    a {
+      color: $navyBlue;
+    }
+  }
+  .logout {
+    background: $eggshell;
+    height: 8vh;
+    flex: auto;
+    text-align: center;
+    a {
+      color: $navyBlue;
+    }
+  }
+  .welcome {
+    background: $navyBlue;
+    height: 8vh;
+    flex: auto;
+    text-align: center;
+    a {
+      color: white;
+    }
+  }
+}
+
+#profilePictureNav {
+  height: 8vh;
+  width: auto;
+}

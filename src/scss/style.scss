@@ -1,4 +1,8 @@
+@import "partials/_colors.scss";
+@import "partials/_user.scss";
 @import "partials/_global.scss";
+@import "partials/_locations.scss";
+@import "partials/_cities.scss";
 @import "partials/_navbar.scss";
 @import "partials/_signup.scss";
 @import "partials/_keyframes.scss";
@@ -11,34 +15,3 @@ $family-serif: 'Playfair Display', serif;
 $family-primary: $family-serif;
 
 @import "bulma/bulma";
-.column {
-  overflow-y: scroll;
-  height: 50vh;
-}
-.columns.card {
-  height: 30vh;
-  margin-bottom: 10px;
-}
-#profilePictureNav {
-  border-radius: 10px;
-  height: 30px;
-  width: 30px;
-}
-.userShowNavBar {
-  background-color: #343a40;
-  margin-top: 0;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  ul {
-    display: flex;
-    align-items: center;
-  }
-  li {
-    margin: 2px 20px;
-  }
-  a {
-    text-decoration: none;
-    color: white;
-  }
-}

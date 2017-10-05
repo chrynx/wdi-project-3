@@ -1,7 +1,8 @@
-<section class="section">
-  <div class="columns is-multiline">
-    <div ng-repeat="city in citiesIndex.all" class="column is-half">
-      <city-details city="city"></city-details>
-    </div>
+<div class="cityIndexSearch">
+<h2>Search for your city</h2><input type="search">
+</div>
+<div ng-repeat="city in citiesIndex.all">
+  <div ui-sref="citiesShow({ id: city.id })" class="cityIndex" style="background: url('{{city.image}}') no-repeat center center; background-size: cover;)">
+    <h2 class="title">{{ city.name }}<br>{{ city.country }}</h2>
   </div>
-</section>
+</div>
