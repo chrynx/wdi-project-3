@@ -3,7 +3,10 @@
 <head>
   <title>Hidden Travellr</title>
   <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBg6zaDPr9QfiTZZ5Jb9pKqOWT2GjQSQu0&libraries=places" charset="utf-8"></script>
   <!-- inject:js -->
   <!-- endinject -->
@@ -13,7 +16,7 @@
 <body ng-controller="MainCtrl as main">
 
   <nav>
-    <div class="homePage" ><a ui-sref="locationsIndex">Hidden Travellr</a></div>
+    <div class="allCities" ui-sref="home"><a ui-sref-active="active">Hidden Travellr</a></div>
     <div class="allCities" ui-sref="citiesIndex"><a ui-sref-active="active">Cities</a></div>
     <div class="addLocation" ng-if="main.isAuthenticated()" ui-sref="locationsNew"><a ui-sref-active="active">Add a location</a></div>
     <div class="addCity" ng-if="main.isAuthenticated()" ui-sref="citiesNew"><a ui-sref-active="active">Add a city</a></div>
@@ -29,9 +32,6 @@
   <!-- <p>{{ main.message }}</p> -->
 </div>
 <main ui-view>
-  <div class="homeLanding">
-  <p>welcome to<br>hidden travellr</p>
-</div>
 </main>
 
 </body>

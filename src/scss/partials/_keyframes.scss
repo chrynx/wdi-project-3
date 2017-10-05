@@ -1,11 +1,11 @@
 @import "partials/_colors.scss";
 @keyframes shake {
-  0% { transform: rotate(0deg);}
-  20% { transform: rotate(10deg);}
-  40% { transform: rotate(-8deg);}
-  60% { transform: rotate(6deg);}
-  80% { transform: rotate(-4deg);}
-  100% { transform: rotate(0deg);}
+  0% { transform: translateY(0px);}
+  20% { transform: translateY(5px);}
+  40% { transform: translateY(-3px);}
+  60% { transform: translateY(3px);}
+  80% { transform: translateY(-1px);}
+  100% { transform: translateY(0px);}
 }
 
 
@@ -24,4 +24,43 @@
   60% { width: 100px; }
   80% { width: 150px; }
   100% { width: 200px; }
+}
+
+@keyframes adjustWidth {
+  0% {width: 40vh;}
+  100% {width: 100%;}
+}
+
+@keyframes adjustOpacity {
+  0% {opacity: 0.2;}
+  100% {opacity: 1;}
+}
+
+@keyframes adjustHeight1 {
+  0% {height: 0vh;}
+  100% {height: 60vh;}
+}
+@keyframes adjustHeight2 {
+  0% {height: 0vh;}
+  100% {height: 80vh;}
+}
+@keyframes adjustHeight3 {
+  0% {height: 0vh;}
+  100% {height: 40vh;}
+}
+
+@keyframes juggleheight1 {
+  0% {height: 60vh;}
+  50% {height: 58vh;}
+  100% {height: 60vh;}
+}
+@keyframes juggleheight2 {
+  0% {height: 80vh;}
+  50% {height: 78vh;}
+  100% {height: 80vh;}
+}
+@keyframes juggleheight3 {
+  0% {height: 40vh;}
+  50% {height: 38vh;}
+  100% {height: 40vh;}
 }

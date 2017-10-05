@@ -4,24 +4,24 @@ nav, .homePage, .allLocations, .allCities, .addLocation, .addCity, .login, .regi
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid $navyBlue;
 }
 
 nav {
+  background: $eggshell;
   z-index: 9001;
   position: fixed;
   top: 0;
   width: 100%;
-  height: 8vh;
+  height: 5vh;
   .homePage {
-    height: 8vh;
+    height: 5vh;
     flex: auto;
     a {
       color: $navyBlue;
     }
   }
   .allCities {
-    height: 8vh;
+    height: 5vh;
     flex: auto;
     text-align: center;
     a {
@@ -29,7 +29,7 @@ nav {
     }
   }
   .addLocation {
-    height: 8vh;
+    height: 5vh;
     flex: auto;
     text-align: center;
     a {
@@ -37,7 +37,7 @@ nav {
     }
   }
   .addCity {
-    height: 8vh;
+    height: 5vh;
     flex: auto;
     text-align: center;
     a {
@@ -45,7 +45,7 @@ nav {
     }
   }
   .login {
-    height: 8vh;
+    height: 5vh;
     flex: auto;
     text-align: center;
     a {
@@ -53,7 +53,7 @@ nav {
     }
   }
   .register {
-    height: 8vh;
+    height: 5vh;
     flex: auto;
     text-align: center;
     a {
@@ -61,7 +61,7 @@ nav {
     }
   }
   .logout {
-    height: 8vh;
+    height: 5vh;
     flex: auto;
     text-align: center;
     a {
@@ -69,7 +69,7 @@ nav {
     }
   }
   .welcome {
-    height: 8vh;
+    height: 5vh;
     flex: auto;
     text-align: center;
     a {
@@ -79,6 +79,6 @@ nav {
 }
 
 #profilePictureNav {
-  height: 8vh;
+  height: 5vh;
   width: auto;
 }

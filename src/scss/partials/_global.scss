@@ -12,19 +12,12 @@ body {
   overflow: auto;
   box-sizing: border-box;
 }
-.homeLanding {
-  height: 92vh;
-  p{
-    color: $navyBlue;
-    font-size: 120px;
-    position: relative;
-    top: 10%;
-    left: 5%;
-    text-transform: uppercase;
-  }
-}
+
+
 main {
-  margin-top: 8vh;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  margin-top: 5vh;
   overflow-x: hidden;
 }
 img {

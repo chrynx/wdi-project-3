@@ -1,8 +1,10 @@
 <div class="cityIndexSearch">
-<h2>Search for your city</h2><input ng-model="citiesIndex.q" type="search">
+  <h2>Search for your city</h2><input ng-model="citiesIndex.q" type="search">
 </div>
-<div ng-repeat="city in citiesIndex.all | filter: citiesIndex.q">
-  <div ui-sref="citiesShow({ id: city.id })" class="cityIndex" style="background: url('{{city.image}}') no-repeat center center; background-size: cover;)">
-    <h2 class="title">{{ city.name }}<br>{{ city.country }}</h2>
+<div class=" columns is-multiline cityIndex" >
+<div class=" column " ng-repeat="city in citiesIndex.all | filter: citiesIndex.q">
+  <div ui-sref="citiesShow({ id: city.id })" class="eachCity" style="background: url('{{city.image}}') no-repeat center center; background-size: cover;)">
+    <div class="columns">{{ city.name }}, {{ city.country }}</div>
   </div>
+</div>
 </div>

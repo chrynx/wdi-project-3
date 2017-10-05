@@ -1,5 +1,6 @@
 @import "partials/_colors.scss";
 @import "partials/_user.scss";
+@import "partials/_landing.scss";
 @import "partials/_global.scss";
 @import "partials/_locations.scss";
 @import "partials/_cities.scss";
@@ -8,10 +9,4 @@
 @import "partials/_keyframes.scss";
 @import "partials/_maps.scss";
 @import "bulma/sass/utilities/initial-variables";
-
-$primary: #6ab5ff;
-$danger: #f9628b;
-$family-serif: 'Playfair Display', serif;
-$family-primary: $family-serif;
-
 @import "bulma/bulma";

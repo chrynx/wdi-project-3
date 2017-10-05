@@ -1,5 +1,6 @@
 /* global google:ignore */
-
+/* global markerCluster:ignore */
+/* global MarkerClusterer:ignore */
 angular
   .module('hiddenTravellr')
   .directive('googleMap', googleMap);
@@ -20,12 +21,12 @@ function googleMap() {
       radius: '='
     },
     link($scope, $element) {
-
+      const labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       let markers = [];
       // const locationType = [$scope.type];
       map =  new google.maps.Map($element[0], {
         center: { lat: 51.5074, lng: 0.1278},
-        zoom: 13
+        zoom: 7
       });
       // ------------------------------TRYING OUT THE NEARBY--------------
 
@@ -55,11 +56,12 @@ function googleMap() {
         let selectedMarker = null;
         markers.forEach(marker => marker.setMap(null));
 
-        markers = results.map(result => {
+        markers = results.map((result, i) => { // I am adding the i as an argument
           const marker = new google.maps.Marker({
             map: map,
             position: result.geometry.location,
-            animation: google.maps.Animation.DROP
+            animation: google.maps.Animation.DROP,
+            label: labels[i % labels.length] // I added the label here to label the markers
           });
 
           marker.addListener('click', (e) => {
@@ -69,7 +71,8 @@ function googleMap() {
 
           return marker;
         });
-
+        const markerCluster = new MarkerClusterer(map, markers,
+          {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
         if(selectedMarker) {
           selectedMarker.setMap(map);
           markers.push(selectedMarker);
@@ -77,11 +80,16 @@ function googleMap() {
       }
 
       // -------------------------------------------------------
+      const centerIcon = {
+        url: 'https://maxcdn.icons8.com/Share/icon/Sports//centre_of_gravity1600.png',
+        size: new google.maps.Size(60, 60),
+        scaledSize: new google.maps.Size(20, 20)
+      };
       const marker = new google.maps.Marker({ // this is the centre of the city
         map: map,
-        animation: google.maps.Animation.DROP
+        animation: google.maps.Animation.DROP,
+        icon: centerIcon
       });
-
       $scope.$watchGroup(['type', 'radius', 'center'], () => {
         console.log('watchGroup fired...', $scope.center, $scope.radius, $scope.type);
         if(!$scope.center.lat || !$scope.center.lng || !$scope.radius || !$scope.type) return false;

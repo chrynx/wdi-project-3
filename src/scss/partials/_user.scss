@@ -1,7 +1,8 @@
 @import "partials/_colors.scss";
 
 .userShowNavBar {
-  margin-top: 0;
+  background-color: $navyBlue;
+  margin-top: 5px;
   padding: 10px 0;
   display: flex;
   justify-content: center;
@@ -14,13 +15,37 @@
   }
   a {
     text-decoration: none;
-    color: $navyBlue;
+    color: $eggshell;
   }
 }
-.userShowBottom {
-  padding-top: 30px;
-}
 .profileCities {
+  height: 70vh;
+  overflow-y: scroll;
+  word-break: normal;
+  word-wrap: break-word;
 }
 .profileLocations {
+  height: 70vh;
+  overflow-y: scroll;
+  word-break: normal;
+  word-wrap: break-word;
+}
+
+.profilePageTop {
+    h1 {
+    font-weight: 700;
+    margin: 5px auto;
+    font-size: 32px;
+    padding-left: 20px;
+  }
+  p {
+    font-size: 20px;
+    padding-left: 20px;
+  }
+  img {
+    height: 200px;
+    width: 200px;
+    border: 5px solid $navyBlue;
+    border-radius: 50%;
+  }
 }

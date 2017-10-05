@@ -2,38 +2,72 @@
 
 .cityShowTop {
   span {
-    font-size: 40px;
+    font-size: 30px;
   }
   select {
-    text-transform: uppercase;
+    margin-top: 5px;
+    height: 4vh;
+    width: 100%;
+    text-transform: capitalize;
+  }
+  .slider {
+    width: 100%;
   }
   height: 40vh;
   h2 {
-    font-size: 24px;
+    font-size: 20px;
+  }
+}
+
+.cityIndex {
+  height: 100%;
+  width: 100%;
+  overflow-y: visible;
+}
+.eachCity {
+  text-align: left;
+  display: flex;
+  align-items: flex-end;
+  border: 5px solid $navyBlue;
+  overflow: hidden;
+  height: 20vh;
+  width: 500px;
+  margin: 10px;
+  div {
+    padding: auto;
+    font-size: 32px;
+    word-wrap: normal;
+    margin: auto;
+    text-transform: capitalize;
+    color: $eggshell;
+    font-weight: 800;
+  }
+  &:hover {
+    animation: shake 1s;
   }
 }
 .cityShowLocations {
   height: 40vh;
-  overflow-y: scroll;
-}
-.cityIndex {
-  border: 5px solid $navyBlue;
+  overflow-x: scroll;
   h2 {
-    position: relative;
-    font-size: 120px;
+    text-align: center;
+    font-weight: 800;
+    background: $navyBlue;
     color: $eggshell;
-    text-transform: uppercase;
   }
-  height: 30vh;
 }
+
 .cityIndexSearch {
   text-transform: uppercase;
-  height: 5vh;
+  height: 8vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: $navyBlue;
   input {
+    font-size: 32px;
+    height: 6vh;
+    border-radius: 50px;
     margin-left: 10px;
     width: 20%;
   }

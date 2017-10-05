@@ -1,4 +1,4 @@
-<div ui-sref="locationsShow({ id: location.id })" class="columns card">
+<div class="columns card">
   <div class="column is-4"><img ng-src="{{ location.image }}"></div>
   <div class="column">
     <h2 class="title">{{ location.name }}</h2>
@@ -6,7 +6,7 @@
     <h4>City: <em>{{ location.city.name }}, {{ location.city.country }}</em></h4>
     <p>Rating: <em>{{ location.rating }}</em></p>
     <p>Price Rating: <em>{{ location.priceRating }}</em></p>
-    <p ng-if="location.createdBy"> Created By: <a ui-sref="usersShow({id:location.createdBy.id})">{{location.createdBy.username }}</a></p>
+    <p ng-if="location.createdBy"> Created By: <a ui-sref="usersShow({id: location.createdBy.id})">{{location.createdBy.username }}</a></p>
 {{location.createdBy.id}}
-    </div>
   </div>
+</div>

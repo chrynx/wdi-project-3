@@ -31,7 +31,7 @@
       </div>
       <div>
         <h2>Choose your desired <strong>radius</strong>:</h2>
-        <input name="locationRadiusFilter" type="range" ng-model="citiesShow.radius" name="radius" step="100" min="100" max="2500" ng-model-options="{ debounce: 250 }">
+        <input name="locationRadiusFilter" class="slider" type="range" ng-model="citiesShow.radius" name="radius" step="100" min="100" max="2500" ng-model-options="{ debounce: 250 }">
       </div>
     </div>
   </div>
@@ -39,6 +39,7 @@
   <div class="columns">
     <div class="column is-4">
       <div class="cityShowLocations">
+        <h2>Nearby Locations</h2>
         <div class="columns" ng-repeat="place in citiesShow.places" >
           <div class="column is-4">
             <img ng-src="{{ place.imageUrl }}">
@@ -46,20 +47,21 @@
           <div class="column is-8">
             Name: {{ place.name }}<br>
             Address: {{ place.vicinity }}
+            <div ng-if="{{place.rating}}">Rating: {{ place.rating }}</div>
             <hr>
-            Rating: {{ place.rating }}
           </div>
         </div>
       </div>
     </div>
     <div class="column is-8">
       <div class="cityShowLocations">
+        <h2>User Locations</h2>
         <div ui-sref="locationsShow.location({ id: location.id })" class="columns" ng-repeat="location in citiesShow.city.locations">
           <div class="column is-4">
             <img ng-src="{{ location.image }}">
           </div>
           <div class="column is-8">
-            {{ location.name }}<br>
+            <div class="cityShowLocationName">{{ location.name }}<div><br>
             {{ location.description }}
           </div>
         </div>
