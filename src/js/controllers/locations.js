@@ -1,16 +1,8 @@
 angular
   .module('hiddenTravellr')
-  .controller('LocationsIndexCtrl', LocationsIndexCtrl)
   .controller('LocationsNewCtrl', LocationsNewCtrl)
   .controller('LocationsShowCtrl', LocationsShowCtrl)
   .controller('LocationsEditCtrl', LocationsEditCtrl);
-
-LocationsIndexCtrl.$inject = [ 'Location'];
-function LocationsIndexCtrl(Location) {
-  const vm = this;
-  vm.all = Location.query();
-  console.log('this is inside the locationsIndexCtrl', vm.all);
-}
 
 LocationsNewCtrl.$inject = ['$state', 'Location', 'City'];
 function LocationsNewCtrl($state, Location, City) {
@@ -24,7 +16,7 @@ function LocationsNewCtrl($state, Location, City) {
       .$promise
       .then((response) => {
         console.log('This is after creating a location', response);
-        $state.go('locationsIndex');
+        $state.go('citiesIndex');
       });
   }
 }
@@ -41,7 +33,7 @@ function LocationsShowCtrl($state, Location, $stateParams, PostComment) {
       .$promise
       .then((response) => {
         console.log('This is after deleting a location', response);
-        $state.go('locationsIndex');
+        $state.go('citiesIndex');
       });
   }
   function addComment() {

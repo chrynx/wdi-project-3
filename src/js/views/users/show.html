@@ -12,7 +12,7 @@
     </ul>
   </div>
   <!-- ===== -->
-  <div class="columns is-12">
+  <div class="userShowBottom columns is-12">
     <div class="column is-3" style="margin-left: 20px;display: block;height: 50vh;overflow-y: scroll;">
       <h1 style="font-weight: 700;margin: 5px auto;font-size: 14px;">Username: </h1>
       <p class="box" style="font-size: 12px;">{{ usersShow.user.username }}</p>
@@ -23,7 +23,7 @@
       <h1 style="font-weight: 700;margin: 5px auto;font-size: 14px;">From: </h1>
       <p class="box" style="font-size: 12px;">{{ usersShow.user.origin }}</p>
     </div>
-    <div class="column is-9" style="height: 50vh;overflow-y: scroll;" ng-show="profileCities">
+    <div class="column is-9 profileCities" style="height: 50vh;overflow-y: scroll;" ng-show="profileCities">
       <div class="columns">
         <div class="column is-12">
           <h3>{{ usersShow.user.username }}'s cities</h3>
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <div class="column is-9" style="height: 50vh;overflow-y: scroll;" ng-show="profileLocations">
+    <div class="column is-9 profileLocations" style="height: 50vh;overflow-y: scroll;" ng-show="profileLocations">
       <div class="columns">
         <div class="column is-12">
           <h3>{{ usersShow.user.username }}'s locations</h3>

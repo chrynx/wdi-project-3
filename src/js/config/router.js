@@ -7,11 +7,6 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider
-    .state('locationsIndex', {
-      url: '/',
-      templateUrl: '/js/views/locations/index.html',
-      controller: 'LocationsIndexCtrl as locationsIndex'
-    })
     .state('locationsNew', {
       url: '/locations/new',
       templateUrl: '/js/views/locations/new.html',

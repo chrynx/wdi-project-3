@@ -29,7 +29,7 @@ function LoginCtrl($auth, $state) {
       $auth.login(vm.credentials)
         .then(() => {
           console.log('was able to log in');
-          $state.go('locationsIndex');
+          $state.go('citiesIndex');
         })
         .catch(() => $state.go('login'));
     }
@@ -44,6 +44,6 @@ function LogoutCtrl($auth, $state) {
   vm.credentials = {};
   $auth.logout()
     .then(() => {
-      $state.go('locationsIndex');
+      $state.go('citiesIndex');
     });
 }

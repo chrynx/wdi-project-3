@@ -7,7 +7,6 @@ const secureRoute = require('../lib/secureRoute');
 
 // --------------
 router.route('/locations')
-  .get(locations.index)
   .post(secureRoute, locations.create);
 
 router.route('/locations/:id')

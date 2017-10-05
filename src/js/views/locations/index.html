@@ -1,8 +1,0 @@
-<div class="locationIndexSearch">
-<h2>Search for your location</h2><input type="search">
-</div>
-<div ng-repeat="location in locationsIndex.all">
-  <div ui-sref="locationsShow({ id: location.id })" class="locationIndex" style="background: url('{{location.image}}') no-repeat center center; background-size: cover;)">
-    <h2 class="title">{{ location.name }}<br>{{ location.country }}</h2>
-  </div>
-</div>

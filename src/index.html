@@ -14,8 +14,7 @@
 
   <nav>
     <div class="homePage" ><a ui-sref="locationsIndex">Hidden Travellr</a></div>
-    <div class="allLocations" ui-sref="locationsIndex" ><a ui-sref-active="active">All Locations</a></div>
-    <div class="allCities" ui-sref="citiesIndex"><a ui-sref-active="active">All Cities</a></div>
+    <div class="allCities" ui-sref="citiesIndex"><a ui-sref-active="active">Cities</a></div>
     <div class="addLocation" ng-if="main.isAuthenticated()" ui-sref="locationsNew"><a ui-sref-active="active">Add a location</a></div>
     <div class="addCity" ng-if="main.isAuthenticated()" ui-sref="citiesNew"><a ui-sref-active="active">Add a city</a></div>
     <div class="login" ng-if="!main.isAuthenticated()" ui-sref="login"><a ui-sref-active="active">Login</a></div>
@@ -29,7 +28,11 @@
 <div class="message" ng-if="main.message">
   <!-- <p>{{ main.message }}</p> -->
 </div>
-<main ui-view></main>
+<main ui-view>
+  <div class="homeLanding">
+  <p>welcome to<br>hidden travellr</p>
+</div>
+</main>
 
 </body>
 </html>
