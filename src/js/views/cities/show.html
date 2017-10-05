@@ -54,7 +54,7 @@
     </div>
     <div class="column is-8">
       <div class="cityShowLocations">
-        <div class="columns" ng-repeat="location in citiesShow.city.locations">
+        <div ui-sref="locationsShow.location({ id: location.id })" class="columns" ng-repeat="location in citiesShow.city.locations">
           <div class="column is-4">
             <img ng-src="{{ location.image }}">
           </div>

@@ -8,17 +8,14 @@ html {
   display: none;
 }
 body {
-  background-color: $navyBlue;
   height: 100%;
   overflow: auto;
   box-sizing: border-box;
 }
 .homeLanding {
   height: 92vh;
-  background: url('http://media.istockphoto.com/photos/mighty-mountain-reflection-picture-id500792581?k=6&m=500792581&s=612x612&w=0&h=Ztc-bfPmcA4AfHFSNm0BsNeorIctybih-EP6dedy-CQ=') no-repeat center center;
-  background-size: cover;
   p{
-    color: $eggshell;
+    color: $navyBlue;
     font-size: 120px;
     position: relative;
     top: 10%;

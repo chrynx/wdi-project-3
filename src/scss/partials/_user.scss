@@ -1,7 +1,6 @@
 @import "partials/_colors.scss";
 
 .userShowNavBar {
-  background-color: $navyBlue;
   margin-top: 0;
   padding: 10px 0;
   display: flex;
@@ -15,15 +14,13 @@
   }
   a {
     text-decoration: none;
-    color: $eggshell;
+    color: $navyBlue;
   }
 }
 .userShowBottom {
   padding-top: 30px;
 }
 .profileCities {
-  background-color: $eggshell;
 }
 .profileLocations {
-  background-color: $eggshell;
 }
