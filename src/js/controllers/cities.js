@@ -34,7 +34,8 @@ function CitiesShowCtrl($state, City) {
 CitiesNewCtrl.$inject = ['$state', 'City', 'Location'];
 function CitiesNewCtrl($state, City, Location) {
   const vm  = this;
-  vm.locations = Location.query();
+  // to check - do you need all locations on a city new page
+  // vm.locations = Location.query();
   vm.create = citiesCreate;
 
   function citiesCreate(){

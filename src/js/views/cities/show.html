@@ -47,7 +47,7 @@
           <div class="column is-8">
             Name: {{ place.name }}<br>
             Address: {{ place.vicinity }}
-            <div ng-if="{{place.rating}}">Rating: {{ place.rating }}</div>
+            <div ng-if="place.rating">Rating: {{ place.rating }}</div>
             <hr>
           </div>
         </div>
@@ -56,7 +56,7 @@
     <div class="column is-8">
       <div class="cityShowLocations">
         <h2>User Locations</h2>
-        <div ui-sref="locationsShow.location({ id: location.id })" class="columns" ng-repeat="location in citiesShow.city.locations">
+        <div ui-sref="locationsShow({ id: location.id })" class="columns" ng-repeat="location in citiesShow.city.locations">
           <div class="column is-4">
             <img ng-src="{{ location.image }}">
           </div>
