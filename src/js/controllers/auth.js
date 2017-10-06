@@ -27,17 +27,21 @@ function LoginCtrl($auth, $state) {
   function submit() {
     if (vm.loginForm.$valid) {
       $auth.login(vm.credentials)
-        .then(() => {
-          console.log('was able to log in');
-          $state.go('citiesIndex');
-        })
+        .then(() => $state.go('home'))
         .catch(() => $state.go('login'));
     }
   }
 
-  vm.submit = submit;
-}
+  function authenticate(provider) {
+    $auth.authenticate(provider)
+      .then(()=> $state.go('home'));
+  }
 
+
+  vm.submit = submit;
+  vm.authenticate = authenticate;
+
+}
 LogoutCtrl.$inject = ['$auth', '$state'];
 function LogoutCtrl($auth, $state) {
   const vm = this;

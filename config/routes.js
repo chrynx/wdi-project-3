@@ -2,12 +2,16 @@ const router = require('express').Router();
 const locations = require('../controllers/locations');
 const cities = require('../controllers/cities');
 const users = require('../controllers/users');
+const oauth = require('../controllers/oauth');
 const auth = require('../controllers/auth');
 const secureRoute = require('../lib/secureRoute');
 
 // --------------
 router.route('/locations')
   .post(secureRoute, locations.create);
+
+router.route('/oauth/facebook')
+  .post(oauth.facebook);
 
 router.route('/locations/:id')
   .get(locations.show)
