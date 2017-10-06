@@ -8,7 +8,7 @@ function Auth($authProvider) { //the auth function that configures the $auth mod
   $authProvider.loginUrl = '/api/login'; // the url for the login page of the app
   $authProvider.facebook({
     url: '/api/oauth/facebook',
-    clientId: '229323764266908'
+    clientId: '172806373276831'
   });
   console.log('facebook');
 }
