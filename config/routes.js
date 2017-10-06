@@ -9,6 +9,9 @@ const secureRoute = require('../lib/secureRoute');
 router.route('/locations')
   .post(secureRoute, locations.create);
 
+router.route('/oauth/facebook')
+  .post(oauth.facebook);
+
 router.route('/locations/:id')
   .get(locations.show)
   .put(secureRoute, locations.update)
