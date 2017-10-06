@@ -2,6 +2,7 @@ const router = require('express').Router();
 const locations = require('../controllers/locations');
 const cities = require('../controllers/cities');
 const users = require('../controllers/users');
+const oauth = require('../controllers/oauth');
 const auth = require('../controllers/auth');
 const secureRoute = require('../lib/secureRoute');
 

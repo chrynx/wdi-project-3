@@ -8,7 +8,8 @@ const userSchema = new mongoose.Schema({
   coverPicture: String,
   summary: String,
   origin: String,
-  password: { type: String, required: true }
+  password: { type: String },
+  facebookId: { type: String, unique: true }
 });
 
 userSchema
@@ -31,8 +32,9 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
-    this.invalidate('passwordConfirmation', 'does not match');
+  if(!this.password && !this.facebookId) this.invalidate('password', 'Password is required');
+  if(this.isModified('password') && this._passwordConfirmation !== this.password) {
+    this.invalidate('passwordConfirmation', 'Passwords do not match');
   }
   next();
 });
