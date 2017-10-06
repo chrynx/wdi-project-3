@@ -23,10 +23,16 @@ function googleMap() {
     link($scope, $element) {
       const labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       let markers = [];
+      let markerCluster = null;
       // const locationType = [$scope.type];
       map =  new google.maps.Map($element[0], {
         center: { lat: 51.5074, lng: 0.1278},
         zoom: 7
+      });
+
+      map.addListener('click', (e) => {
+        console.log('map click', e);
+        getNearbyPlaces(e.latLng, $scope.radius, $scope.type);
       });
       // ------------------------------TRYING OUT THE NEARBY--------------
 
@@ -55,7 +61,7 @@ function googleMap() {
       function addPlaceMarkers(results) {
         let selectedMarker = null;
         markers.forEach(marker => marker.setMap(null));
-
+        if(markerCluster) markerCluster.clearMarkers();
         markers = results.map((result, i) => { // I am adding the i as an argument
           const marker = new google.maps.Marker({
             map: map,
@@ -71,7 +77,7 @@ function googleMap() {
 
           return marker;
         });
-        const markerCluster = new MarkerClusterer(map, markers,
+        markerCluster = new MarkerClusterer(map, markers,
           {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
         if(selectedMarker) {
           selectedMarker.setMap(map);

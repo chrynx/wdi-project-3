@@ -15,21 +15,39 @@
 </head>
 <body ng-controller="MainCtrl as main">
 
-  <nav>
-    <div class="allCities" ui-sref="home"><a ui-sref-active="active">Hidden Travellr</a></div>
-    <div class="allCities" ui-sref="citiesIndex"><a ui-sref-active="active">Cities</a></div>
-    <div class="addLocation" ng-if="main.isAuthenticated()" ui-sref="locationsNew"><a ui-sref-active="active">Add a location</a></div>
-    <div class="addCity" ng-if="main.isAuthenticated()" ui-sref="citiesNew"><a ui-sref-active="active">Add a city</a></div>
-    <div class="login" ng-if="!main.isAuthenticated()" ui-sref="login"><a ui-sref-active="active">Login</a></div>
-    <div class="register" ng-if="!main.isAuthenticated()" ui-sref="register"><a ui-sref-active="active">Register</a></div>
-    <div class="logout" ng-click="main.logout()" ng-if="main.isAuthenticated()"><a ui-sref="locationsIndex">Logout</a></div>
-    <div class="welcome" ng-if="main.isAuthenticated()" ui-sref="usersShow({ id: main.currentUser.id })">
-      <a>Profile Page</a>
-      <!-- <img id="profilePictureNav" src="{{ main.currentUser.profilePicture }}"> -->
-      <!-- <a>Hi, {{ main.currentUser.username}}!</a></div> -->
+  <nav class="nav">
+
+
+      <div class="nav-left">
+        <a class="nav-item is-tab is-hidden-mobile" ui-sref="home" ui-sref-active="active">Hidden Travellr</a>
+        <a class="nav-item is-tab is-hidden-mobile" ui-sref="citiesIndex">Cities</a>
+        <a class="nav-item is-tab is-hidden-mobile" ng-if="main.isAuthenticated()" ui-sref="locationsNew">Add a location</a>
+        <a class="nav-item is-tab is-hidden-mobile" ng-if="main.isAuthenticated()" ui-sref="citiesNew">Add a city</a>
+      </div>
+      <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <div class="nav-right">
+
+        <a class="nav-item is-tab is-hidden-mobile" ng-if="main.isAuthenticated()" ui-sref="usersShow({ id: main.currentUser.id })">
+          <figure class="image is-20x20" style="margin-right: 8px;">
+            <img id="profilePictureNav" src="{{ main.currentUser.profilePicture }}">
+          </figure>
+          Profile
+        </a>
+        <a class="nav-item is-tab is-hidden-mobile"  ng-if="!main.isAuthenticated()" ui-sref="login">Login</a>
+        <a class="nav-item is-tab is-hidden-mobile" ng-if="!main.isAuthenticated()" ui-sref="register">Register</a>
+        <a class="nav-item is-tab is-hidden-mobile" ng-click="main.logout()" ng-if="main.isAuthenticated()">Logout</a>
+      </div>
+
   </nav>
-<div class="message" ng-if="main.message">
-  <!-- <p>{{ main.message }}</p> -->
+
+<div class="message-response" ng-if="main.message">
+  <p>{{ main.message }}</p>
 </div>
 <main ui-view>
 </main>

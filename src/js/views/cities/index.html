@@ -1,10 +1,20 @@
-<div class="cityIndexSearch">
-  <h2>Search for your city</h2><input ng-model="citiesIndex.q" type="search">
-</div>
-<div class=" columns is-multiline cityIndex" >
-<div class=" column " ng-repeat="city in citiesIndex.all | filter: citiesIndex.q">
-  <div ui-sref="citiesShow({ id: city.id })" class="eachCity" style="background: url('{{city.image}}') no-repeat center center; background-size: cover;)">
-    <div class="columns">{{ city.name }}, {{ city.country }}</div>
+<div class="container">
+
+<div class="city-header">
+  <div>
+  <h2 class="has-text-centered title"><strong>Search for your city</strong></h2>
+  <hr>
   </div>
+  <div>
+  <input class="input" ng-model="citiesIndex.q" type="search">
+  <hr>
+  </div>
+</div>
+<div class=" columns is-multiline cityIndex">
+<div class=" column is-6" ng-repeat="city in citiesIndex.all | filter: citiesIndex.q">
+  <div ui-sref="citiesShow({ id: city.id })" class="eachCity" style="background: url('{{city.image}}') no-repeat center center; background-size: cover;)">
+    <p  id="cityname">{{ city.name }}, {{ city.country }}</p>
+  </div>
+</div>
 </div>
 </div>

@@ -7,7 +7,7 @@ function MainCtrl($rootScope, $state, $auth, $transitions, User) {
   const vm = this;
   vm.navIsOpen = false;
   vm.isAuthenticated = $auth.isAuthenticated;
-  const protectedStates = ['locationsNew', 'locationsEdit'];
+  const protectedStates = ['locationsNew', 'locationsEdit', 'locationsShow', 'citiesNew'];
 
   $rootScope.$on('error', (e, err) => {
     vm.message = err.data.message;

@@ -1,46 +1,59 @@
-<div class="landing">
-    <h1>Join our community</h1>
-    <p>Enter your details to enjoy the world</p>
-    <div  class="landingSignUpForm">
-    <form name="register.registerForm" ng-submit="register.submit()" novalidate>
+<div class="columns">
+    <div class="column is-4 is-offset-4">
+      <h1 class="title">
+        Register an Account
+      </h1>
+    <form  class="box" name="register.registerForm" ng-submit="register.submit()" novalidate>
       <div>
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" ng-model="register.user.username" required>
+        <p class="control">
+        <input type="text" class="input" name="username" id="username" ng-model="register.user.username" required>
+      </p>
         <div ng-messages="register.registerForm.username.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched) && register.registerForm.username.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
       <div>
         <label for="profilePicture">Profile Picture</label>
-        <input type="text" name="profilePicture" id="profilePicture" ng-model="register.user.profilePicture">
+        <p class="control">
+        <input type="text" class="input" name="profilePicture" id="profilePicture" ng-model="register.user.profilePicture">
+        </p>
         <div ng-messages="register.registerForm.profilePicture.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.profilePicture.$touched) && register.registerForm.profilePicture.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
       <div>
         <label for="coverPicture">Cover Picture</label>
-        <input type="text" name="coverPicture" id="coverPicture" ng-model="register.user.coverPicture" >
+        <p class="control">
+        <input type="text" class="input" name="coverPicture" id="coverPicture" ng-model="register.user.coverPicture" >
+        </p>
         <div ng-messages="register.registerForm.coverPicture.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.coverPicture.$touched) && register.registerForm.coverPicture.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
       <div>
         <label for="summary">Summary</label>
-        <input type="textarea" name="summary" id="summary" ng-model="register.user.summary">
+        <p class="control">
+        <input type="textarea"class="input"  name="summary" id="summary" ng-model="register.user.summary">
+        </p>
         <div ng-messages="register.registerForm.summary.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.summary.$touched) && register.registerForm.summary.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
       <div>
         <label for="origin">Origin</label>
-        <input type="textarea" name="origin" id="origin" ng-model="register.user.origin">
+        <p class="control">
+        <input type="textarea" class="input" name="origin" id="origin" ng-model="register.user.origin">
+        </p>
         <div ng-messages="register.registerForm.origin.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.origin.$touched) && register.registerForm.origin.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
       <div>
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" ng-model="register.user.email" required>
+        <p class="control">
+        <input type="email" class="input" name="email" id="email" ng-model="register.user.email" required>
+        </p>
         <div ng-messages="register.registerForm.email.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.email.$touched) && register.registerForm.email.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
           <div ng-message="email">This field must be a valid email address.</div>
@@ -48,22 +61,29 @@
       </div>
       <div>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" ng-model="register.user.password" required>
+        <p class="control">
+        <input type="password" class="input" name="password" id="password" ng-model="register.user.password" required>
+        </p>
         <div ng-messages="register.registerForm.password.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched) && register.registerForm.password.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
       <div>
         <label for="passwordConfirmation">Password Confirmation</label>
-        <input type="password" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation" required>
+        <p class="control">
+        <input type="password" class="input" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation" required>
+        </p>
         <div ng-messages="register.registerForm.passwordConfirmation.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched) && register.registerForm.passwordConfirmation.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
       <button class="button is-primary">Register</button>
-    </form>
+
+        <p class="has-text-centered">
+          <a href="#" ui-sref="login">Login</a>
+          |
+          <a href="#">Need help?</a>
+        </p>
+      </form>
+    </div>
   </div>
-  <div class="topLeftLandingDivWithoutWords"></div>
-  <div class="bottomLeftLandingDiv"></div>
-  <div class="bottomRightLandingDiv2"></div>
-</div>

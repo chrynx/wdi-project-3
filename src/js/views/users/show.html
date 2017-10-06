@@ -1,31 +1,35 @@
 
+<div class="user hero is-medium" style="background-image: url('{{usersShow.user.coverPicture}}'); background-size: cover">
 
-<!-- ================================================== -->
-<div class="columns is-fullwidth">
-  <div class="column is-3">
-    <div class="profilePageTop">
-      <div style="height: 21vh;background-image: url('{{usersShow.user.coverPicture}}');background-size: cover;">
-        <img ng-src="{{usersShow.user.profilePicture}}">
-      </div>
-      <h1 style="">Username: </h1>
-      <p>{{ usersShow.user.username }}</p>
-      <h1>Email: </h1>
-      <p>{{ usersShow.user.email }}</p>
-      <h1>Bio: </h1>
-      <p>{{ usersShow.user.summary }}</p>
-      <h1>From: </h1>
-      <p>{{ usersShow.user.origin }}</p>
-    </div>
-  </div>
-  <div class="column is-9">
-    <div class="userShowNavBar columns is-12">
+</div>
+<div class="container">
+
+  <div class="columns box">
+    <div class="column is-3 is-12-mobile">
       <div>
-      <ul>
-        <li><a ng-click="profileNavCity()">Cities</a></li>
-        <li><a ng-click="profileNavLocation()">Locations</a></li>
-      </ul>
+
+        <div class="has-text-centered box">
+          <img class="userProfileImage" ng-src="{{usersShow.user.profilePicture}}">
+          <h1 style="">Username:</h1>
+          <p>{{ usersShow.user.username }}</p>
+          <h1>Email: </h1>
+          <p>{{ usersShow.user.email }}</p>
+          <h1>Bio: </h1>
+          <p>{{ usersShow.user.summary }}</p>
+          <h1>From: </h1>
+          <p>{{ usersShow.user.origin }}</p>
+        </div>
+      </div>
     </div>
-  </div>
+    <div class="column is-9 is-12-mobile box">
+      <div class="columns is-12">
+        <div class="userSelect">
+
+          <a class="title" ng-click="profileNavCity()">Cities</a>
+          <a class="title" ng-click="profileNavLocation()">Locations</a>
+
+        </div>
+      </div>
       <div class="column is-12 profileCities" ng-show="profileCities">
         <div class="columns">
           <div class="column is-12">
@@ -67,7 +71,4 @@
       </div>
     </div>
   </div>
-  <!-- ===== -->
-
-
-  <!-- HERE: {{ usersShow }} -->
+</div>

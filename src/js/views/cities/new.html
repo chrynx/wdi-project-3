@@ -1,47 +1,65 @@
 <div class="cityCreate">
   <div class="columns">
-    <div class="column is-half is-offset-one-quarter">
-      <form ng-submit="citiesNew.create()">
+    <div class="column is-4 is-offset-4">
+      <form class="box" name="citiesNew.newCity" ng-submit="citiesNew.newCity.$valid && citiesNew.create()" novalidate>
 
         <div class="field">
           <p class="control">
             <label class="label" for="name">Name</label>
           </p>
-          <input type="text" class="input" id="name" name="name" ng-model="citiesNew.city.name">
+          <input type="text" class="input" id="name" name="name" ng-model="citiesNew.city.name" required>
+          <div ng-messages="citiesNew.newCity.name.$error" role="alert" ng-show="(citiesNew.newCity.$submitted || citiesNew.newCity.name.$touched) && citiesNew.newCity.name.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
         <div class="field">
           <p class="control">
             <label class="label" for="country">Country</label>
           </p>
-          <input type="text" class="input" id="country" name="country" ng-model="citiesNew.city.country">
+          <input type="text" class="input" id="country" name="country" ng-model="citiesNew.city.country" required>
+          <div ng-messages="citiesNew.newCity.country.$error" role="alert" ng-show="(citiesNew.newCity.$submitted || citiesNew.newCity.country.$touched) && citiesNew.newCity.country.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
         <div class="field">
           <p class="control">
             <label class="label" for="image">Image Url</label>
           </p>
-          <input type="text" class="input" id="image" name="image" ng-model="citiesNew.city.image">
+          <input type="text" class="input" id="image" name="image" ng-model="citiesNew.city.image" required>
+          <div ng-messages="citiesNew.newCity.image.$error" role="alert" ng-show="(citiesNew.newCity.$submitted || citiesNew.newCity.image.$touched) && citiesNew.newCity.image.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
         <div class="field">
           <p class="control">
             <label class="label" for="description">City Description</label>
           </p>
-          <input type="text" class="input" id="description" name="description" ng-model="citiesNew.city.description">
+          <input type="text" class="input" id="description" name="description" ng-model="citiesNew.city.description" required>
+          <div ng-messages="citiesNew.newCity.description.$error" role="alert" ng-show="(citiesNew.newCity.$submitted || citiesNew.newCity.description.$touched) && citiesNew.newCity.description.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
         <div class="field">
           <p class="control">
             <label class="label" for="lat">City Latitude</label>
           </p>
-          <input type="text" class="input" id="lat" name="lat" ng-model="citiesNew.city.lat">
+          <input type="text" class="input" id="lat" name="lat" ng-model="citiesNew.city.lat" required>
+          <div ng-messages="citiesNew.newCity.lat.$error" role="alert" ng-show="(citiesNew.newCity.$submitted || citiesNew.newCity.lat.$touched) && citiesNew.newCity.lat.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
         <div class="field">
           <p class="control">
             <label class="label" for="lng">City Longitude</label>
           </p>
-          <input type="text" class="input" id="lng" name="lng" ng-model="citiesNew.city.lng">
+          <input type="text" class="input" id="lng" name="lng" ng-model="citiesNew.city.lng" required>
+          <div ng-messages="citiesNew.newCity.lng.$error" role="alert" ng-show="(citiesNew.newCity.$submitted || citiesNew.newCity.lng.$touched) && citiesNew.newCity.lng.$invalid" class="error">
+            <div ng-message="required">Please enter a value for this field.</div>
+          </div>
         </div>
 
         <div class="field">

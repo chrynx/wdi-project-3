@@ -1,26 +1,28 @@
-<section class="section">
-  <location-details style="height: 50vh;" location="locationsShow.location"></location-details>
+<div class="container">
 
-  <div>
-    <button ng-if="main.isAuthenticated() && main.currentUserId === locationsShow.location.createdBy.id" class="button is-small is-primary" ui-sref="locationsEdit({ id: locationsShow.location.id })">Edit</button>
-    <button ng-click="locationsShow.delete()" class="button" ng-if="main.isAuthenticated() && main.currentUserId === locationsShow.location.createdBy.id">Delete</button>
+  <location-details style="height: 50vh;" location="locationsShow.location"></location-details>
+<div>
+
+
+  <button ng-if="main.isAuthenticated() && main.currentUserId === locationsShow.location.createdBy.id" class="button is-primary" ui-sref="locationsEdit({ id: locationsShow.location.id })">Edit</button>
+  <button ng-click="locationsShow.delete()" class="button" ng-if="main.isAuthenticated() && main.currentUserId === locationsShow.location.createdBy.id">Delete</button>
 
 </div>
-<a ui-sref="usersShow({id:locationsShow.location.createdBy.id})"><h3>{{ locationsShow.location.createdBy.username }}</h3></a>
-<div class="comments">
-<h2>Comments</h2>
-<p ng-if="!locationsShow.location.comments.length">0 comments</p>
-<ul class="comments__created">
-<li ng-repeat="comment in locationsShow.location.comments track by $index">
-<a ui-sref="usersShow({ id: comment.createdBy.id })"><strong>{{ comment.createdBy.username }}</strong></a> - {{ comment.text }} <button class="button" ng-click="locationsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">Delete</button>
-</li>
-</ul>
-<form ng-if="main.isAuthenticated()" ng-submit="locationsShow.addComment()">
-<label>Add comment</label>
-<textarea ng-model="locationsShow.newComment.text"></textarea>
-<button class="button button--full">Comment</button>
-</form>
-  </div>
-</section>
 
-{{ locationsShow.location.createdBy.id }}
+  <div class="section box">
+    <!-- <a ui-sref="usersShow({id:locationsShow.location.createdBy.id})"><h3>Created By {{ locationsShow.location.createdBy.username }}</h3></a>
+    <h2>Comments</h2> -->
+
+    <form ng-if="main.isAuthenticated()" ng-submit="locationsShow.addComment()">
+      <label>Add comment</label>
+      <textarea ng-model="locationsShow.newComment.text"></textarea>
+      <button class="button button--full">Comment</button>
+    </form>
+    <p ng-if="!locationsShow.location.comments.length">0 comments</p>
+    <ul class="comments__created">
+      <li ng-repeat="comment in locationsShow.location.comments track by $index">
+        <a ui-sref="usersShow({ id: comment.createdBy.id })"><strong>{{ comment.createdBy.username }}</strong></a> - {{ comment.text }} <button class="button" ng-click="locationsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">Delete</button>
+      </li>
+    </ul>
+  </div>
+</div>

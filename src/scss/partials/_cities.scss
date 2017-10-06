@@ -4,6 +4,10 @@
   span {
     font-size: 30px;
   }
+  .city-header {
+    display: flex;
+    justify-content: center;
+  }
   select {
     margin-top: 5px;
     height: 4vh;
@@ -12,6 +16,7 @@
   }
   .slider {
     width: 100%;
+    color: gray;
   }
   height: 40vh;
   h2 {
@@ -27,15 +32,14 @@
 .eachCity {
   text-align: left;
   display: flex;
-  align-items: flex-end;
-  border: 5px solid $navyBlue;
+  border: 2px solid $navyBlue;
   overflow: hidden;
-  height: 20vh;
-  width: 500px;
-  margin: 10px;
+  height: 35vh;
+
+  margin: 1px;
   div {
     padding: auto;
-    font-size: 32px;
+    // font-size: 32px;
     word-wrap: normal;
     margin: auto;
     text-transform: capitalize;
@@ -54,33 +58,5 @@
     font-weight: 800;
     background: $navyBlue;
     color: $eggshell;
-  }
-}
-
-.cityIndexSearch {
-  text-transform: uppercase;
-  height: 8vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $navyBlue;
-  input {
-    font-size: 32px;
-    height: 6vh;
-    border-radius: 50px;
-    margin-left: 10px;
-    width: 20%;
-  }
-}
-
-
-.cityCreate {
-  height: 92vh;
-  width: 100%;
-  form {
-    margin-top: 50px;
-    label {
-      color: $navyBlue;
-    }
   }
 }

@@ -1,11 +1,11 @@
-<section class="section">
-  <div class="columns cityShowTop">
+<div class="container box">
+  <div class="columns">
     <div class="column is-6">
       <google-map locations="citiesShow.city.locations" center="{ lat: citiesShow.city.lat, lng: citiesShow.city.lng}" places="citiesShow.places" type="citiesShow.type" radius="citiesShow.radius"></google-map>
     </div>
-    <div class="column is-6">
+    <div class="column box is-6">
       <div>
-        <span>{{citiesShow.city.name}}, {{citiesShow.city.country}}</span>
+        <span class="title">{{citiesShow.city.name}}, {{citiesShow.city.country}}</span>
       </div>
       <div>
         <h2><strong>City Description</strong></h2>
@@ -13,7 +13,7 @@
       </div>
 
       <div>
-        <h2>Choose a location <strong>type</strong>:</h2>
+        <h2 class="text-is-2">Choose a location <strong>type</strong>:</h2>
         <select name="locationTypeFilter" ng-model="citiesShow.type">
           <option value="airport">airport</option>
           <option value="bar">bar</option>
@@ -38,8 +38,9 @@
   <hr>
   <div class="columns">
     <div class="column is-4">
-      <div class="cityShowLocations">
-        <h2>Nearby Locations</h2>
+      <h2 class="has-text-centered title"><strong>Nearby Locations</strong></h2>
+      <div class="cityShowLocations box">
+
         <div class="columns" ng-repeat="place in citiesShow.places" >
           <div class="column is-4">
             <img ng-src="{{ place.imageUrl }}">
@@ -53,19 +54,21 @@
         </div>
       </div>
     </div>
-    <div class="column is-8">
-      <div class="cityShowLocations">
-        <h2>User Locations</h2>
+    <div class="column is-8-desktop is-12-tablet">
+      <h2 class="has-text-centered title"><strong>User Locations</strong></h2>
+      <div class="cityShowLocations box">
+
         <div ui-sref="locationsShow({ id: location.id })" class="columns" ng-repeat="location in citiesShow.city.locations">
           <div class="column is-4">
             <img ng-src="{{ location.image }}">
           </div>
-          <div class="column is-8">
-            <div class="cityShowLocationName">{{ location.name }}<div><br>
+          <div  class="column is-8-desktop is-12-tablet">
+            <div class="cityShowLocationName">{{ location.name }}<div>
             {{ location.description }}
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
+</div>
