@@ -4,6 +4,7 @@
         Register an Account
       </h1>
     <form  class="box" name="register.registerForm" ng-submit="register.submit()" novalidate>
+
       <div>
         <label for="username">Username</label>
         <p class="control">
@@ -13,6 +14,7 @@
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
+
       <div>
         <label for="profilePicture">Profile Picture</label>
         <p class="control">
@@ -22,6 +24,7 @@
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
+
       <div>
         <label for="coverPicture">Cover Picture</label>
         <p class="control">
@@ -31,15 +34,17 @@
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
+
       <div>
         <label for="summary">Summary</label>
         <p class="control">
-        <input type="textarea"class="input"  name="summary" id="summary" ng-model="register.user.summary">
+        <input type="textarea" class="input"  name="summary" id="summary" ng-model="register.user.summary">
         </p>
         <div ng-messages="register.registerForm.summary.$error" role="alert" ng-show="(register.registerForm.$submitted || register.registerForm.summary.$touched) && register.registerForm.summary.$invalid" class="error">
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
+
       <div>
         <label for="origin">Origin</label>
         <p class="control">
@@ -49,6 +54,7 @@
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
+
       <div>
         <label for="email">Email</label>
         <p class="control">
@@ -59,6 +65,7 @@
           <div ng-message="email">This field must be a valid email address.</div>
         </div>
       </div>
+
       <div>
         <label for="password">Password</label>
         <p class="control">
@@ -68,6 +75,7 @@
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
+
       <div>
         <label for="passwordConfirmation">Password Confirmation</label>
         <p class="control">
@@ -77,13 +85,14 @@
           <div ng-message="required">Please enter a value for this field.</div>
         </div>
       </div>
+
       <button class="button is-primary">Register</button>
 
         <p class="has-text-centered">
           <a href="#" ui-sref="login">Login</a>
-          |
           <a href="#">Need help?</a>
         </p>
+
       </form>
     </div>
   </div>

@@ -1,12 +1,24 @@
 @import "partials/_colors.scss";
 
+.city-header {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    strong {
+      color: $navyBlue;
+    }
+  }
+  input {
+    &::placeholder {
+      text-align: center;
+    }
+  }
+}
 .cityShowTop {
   span {
     font-size: 30px;
-  }
-  .city-header {
-    display: flex;
-    justify-content: center;
   }
   select {
     margin-top: 5px;
@@ -27,7 +39,13 @@
 .cityIndex {
   height: 100%;
   width: 100%;
+  justify-content: center;
   overflow-y: visible;
+}
+.citiesIndexPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .eachCity {
   text-align: left;
@@ -50,6 +68,7 @@
     animation: shake 1s;
   }
 }
+
 .cityShowLocations {
   height: 40vh;
   overflow-x: scroll;
@@ -59,4 +78,11 @@
     background: $navyBlue;
     color: $eggshell;
   }
+}
+
+
+#cityname {
+  padding: 10% 0 0 10%;
+  font-size: 3rem;
+  color: white;
 }

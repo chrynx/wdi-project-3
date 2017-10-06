@@ -8,19 +8,21 @@ html {
   display: none;
 }
 body {
+  background: url('https://media.giphy.com/media/KZApJ3BGDs7fO/giphy.gif');
+  background-size: cover;
   height: 100%;
   overflow: auto;
   box-sizing: border-box;
 }
 
-
 main {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Amatic SC', cursive;
   font-size: 20px;
-
-
 }
 img {
   max-width: 100%;
+  width: 100%;
+}
+input {
   width: 100%;
 }

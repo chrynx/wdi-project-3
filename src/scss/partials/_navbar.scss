@@ -1,83 +1,13 @@
 @import "partials/_colors.scss";
-
-// nav, .homePage, .allLocations, .allCities, .addLocation, .addCity, .login, .register, .logout, .welcome {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-// }
-//
-// nav {
-//   background: $eggshell;
-//   z-index: 9001;
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   height: 5vh;
-//   .homePage {
-//     height: 5vh;
-//     flex: auto;
-//     a {
-//       color: $navyBlue;
-//     }
-//   }
-//   .allCities {
-//     height: 5vh;
-//     flex: auto;
-//     text-align: center;
-//     a {
-//       color: $navyBlue;
-//     }
-//   }
-//   .addLocation {
-//     height: 5vh;
-//     flex: auto;
-//     text-align: center;
-//     a {
-//       color: $navyBlue;
-//     }
-//   }
-//   .addCity {
-//     height: 5vh;
-//     flex: auto;
-//     text-align: center;
-//     a {
-//       color: $navyBlue;
-//     }
-//   }
-//   .login {
-//     height: 5vh;
-//     flex: auto;
-//     text-align: center;
-//     a {
-//       color: $navyBlue;
-//     }
-//   }
-//   .register {
-//     height: 5vh;
-//     flex: auto;
-//     text-align: center;
-//     a {
-//       color: $navyBlue;
-//     }
-//   }
-//   .logout {
-//     height: 5vh;
-//     flex: auto;
-//     text-align: center;
-//     a {
-//       color: $navyBlue;
-//     }
-//   }
-//   .welcome {
-//     height: 5vh;
-//     flex: auto;
-//     text-align: center;
-//     a {
-//       color: $navyBlue;
-//     }
-//   }
-// }
-
+nav.nav {
+  background-color: $navyBlue;
+  a {
+    color: $coral;
+    &:hover {
+      color: $eggshell;
+    }
+  }
+}
 #profilePictureNav {
   height: 5vh;
   width: auto;

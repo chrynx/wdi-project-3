@@ -5,3 +5,17 @@
   color: black;
   background-color: pink;
 }
+.homeLanding {
+  background-image: url('https://media.giphy.com/media/KZApJ3BGDs7fO/giphy.gif');
+  background-size: cover;
+  height: 95vh;
+  width: 100%;
+  overflow: hidden;
+  h2 {
+    position: relative;
+    top: 10%;
+    left: 10%;
+    font-size: 100px;
+    color: $navyBlue;
+  }
+}
