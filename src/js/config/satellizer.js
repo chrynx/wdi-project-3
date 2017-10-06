@@ -6,4 +6,9 @@ Auth.$inject = ['$authProvider']; // words that we do not want minified
 function Auth($authProvider) { //the auth function that configures the $auth module we get from satellizer
   $authProvider.signupUrl = '/api/register'; // the url for the register page of the app
   $authProvider.loginUrl = '/api/login'; // the url for the login page of the app
+  $authProvider.facebook({
+    url: '/api/oauth/facebook',
+    clientId: '229323764266908'
+  });
+  console.log('facebook');
 }

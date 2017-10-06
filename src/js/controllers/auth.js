@@ -27,7 +27,7 @@ function LoginCtrl($auth, $state) {
   function submit() {
     if (vm.loginForm.$valid) {
       $auth.login(vm.credentials)
-        .then(() => $state.go('citiesIndex'))
+        .then(() => $state.go('home'))
         .catch(() => $state.go('login'));
     }
   }
