@@ -4,12 +4,6 @@
 # Hidden Travellr
 
 <figure>
-	<a href="https://hidden-travellr.herokuapp.com/"><img src="https://imgur.com/S5LACqR.jpg"></a>
-	<figcaption>
-    <a href="https://hidden-travellr.herokuapp.com/" title="Ralph Reddit Clone, project[1]">
-      For the third project, we decided to create a website where users can send their own personal locations that you don't normally see with travel agents.
-    </a>
-  </figcaption>
 </figure>
 
 ---
